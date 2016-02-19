@@ -1,0 +1,213 @@
+
+
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <style type='text/css'>
+        html {
+            font-family: Helvetica;
+            color: #222;
+        }
+
+        h1 {
+            color: steelblue;
+            font-size: 24px;
+            margin-top: 24px;
+        }
+
+        button {
+            margin: 0 3px 10px;
+            font-size: 12px;
+        }
+
+        .logLine {
+            border-bottom: 1px solid #ccc;
+            padding: 4px 2px;
+            font-family: courier;
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+
+<body>
+  <h1>IOS#JS TEST</h1>
+   
+    <div id='buttons'></div> <div id='log'></div>
+    <div>
+        <img id="img" src="http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg" onclick="imgCallBack(this.src)" />
+    </div>
+    
+ 
+      
+  <h1>Test how to use objective-c call js</h1>
+      <input type="button" value="Call ObjC system camera" onclick="callSystemCamera()">
+        <input type="button" value="Call ObjC system alert" onclick="showAlertMsg('js title', 'js message')">
+  
+      <input type="button" value="Call ObjC func with JSON " onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
+        <input type="button" value="Call ObjC func with JSON and ObjC call js func to pass args." onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
+       
+    
+    <div>
+      <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
+    </div>
+
+
+<h1>Android#JS Test</h1>
+    <input type="button" onclick="androidTest()" value="Invoke Android:window.AndroidCall.imgCallBack('url')"/>
+    
+  
+    
+</body>
+
+</html>
+
+<script type="text/javascript">
+  
+  
+  var jsFunc = function() {
+    alert('Objective-C call js to show alert');
+  }
+
+var jsParamFunc = function(argument) {
+ // document.getElementById('jsParamFuncSpan').innerHTML = argument['name'];
+  log(argument['name']);
+}
+
+    function androidTest() {
+        log("touch");
+        if (window.AndroidCall) {
+           log(window.AndroidCall.imgCallBack('http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg'));
+        }
+        else {
+            alert("window.AndroidCall is nil");
+        }
+        
+    }
+
+function callSystemCamera() {
+  log("callSystemCamera()");
+  window.AndroidCall.callSystemCamera();
+}
+
+function showAlertMsg(a,b) {
+
+        log(JSON.stringify(a));
+        log(JSON.stringify(b));
+        
+          window.AndroidCall.showAlertMsg(a,b);
+}
+
+function callWithDict(a) {
+
+       log(JSON.stringify(a));
+       
+       window.AndroidCall.callWithDict(a);
+
+}
+
+function jsCallObjcAndObjcCallJsWithDict(a) {
+
+         log(JSON.stringify(a));
+             window.AndroidCall.jsCallObjcAndObjcCallJsWithDict(a);
+}
+
+
+
+    function imgCallBack(src) {
+        log("click img");
+        log(JSON.stringify(src));
+
+        if (window.AndroidCall) {
+            log("called>>>>>");
+            log(window.AndroidCall.imgCallBack('http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg'));
+        }
+        else {
+            alert("window.AndroidCall is nil");
+        }
+    }
+        var uniqueId = 1;
+        function log(message, data) {
+            var logContainner = document.getElementById('log');
+            var el = document.createElement('div');
+            el.className = 'logLine';
+            el.innerHTML = uniqueId++ + '. ' + message + (data?(':<br/>' + JSON.stringify(data)):"");
+            if (logContainner.children && logContainner.children.length) { logContainner.insertBefore(el, logContainner.children[0]); }
+            else { logContainner.appendChild(el); }
+        }
+
+        window.onerror = function (err) {
+            log('window.onerror: ' + err);
+        }
+
+        log("IOS/Android Test");
+        
+        
+        
+        //function connectWebViewJavascriptBridge(callback) {
+        //    if (window.WebViewJavascriptBridge) {
+        //        callback(WebViewJavascriptBridge)
+        //    } else {
+        //        document.addEventListener('WebViewJavascriptBridgeReady', function () {
+        //            callback(WebViewJavascriptBridge);
+        //        }, false)
+        //    }
+        //}
+
+
+        //connectWebViewJavascriptBridge(function (bridge) {
+        //    bridge.init(function (message, responseCallback) {
+        //        log('JS got a message', message);
+        //        var data = { 'Javascript Responds': 'Wee!' }
+        //        log('JS responding with', data);
+        //        responseCallback(data);
+        //    });
+
+        //    bridge.registerHandler('testJavascriptHandler', function (data, responseCallback) {
+        //        log('ObjC called testJavascriptHandler with', data);
+        //        var responseData = { 'Javascript Says': 'Right back atcha!' }
+        //        log('JS responding with', responseData);
+        //        responseCallback(responseData);
+        //    });
+
+        //    /* imgCallback 是注册方法名，data 传递高清图片地址 */
+        //    bridge.registerHandler("imgCallback", function (data, responseCallback) {
+        //        // 成功之后回调
+        //        responseCallback(document.location.toString());
+        //    });
+
+        //    var img = document.getElementById('img');
+        //    img.onclick = function (e) {
+        //        e.preventDefault();
+        //        var data = img.src;
+        //        log('JS sending message', data);
+        //        bridge.send(data, function (responseData) {
+        //            log('JS got response', responseData);
+        //            img.src = responseData;
+        //        });
+        //    }
+
+
+        //    var button = document.getElementById('buttons').appendChild(document.createElement('button'));
+        //    button.innerHTML = 'Send message to ObjC';
+        //    button.onclick = function (e) {
+        //        e.preventDefault();
+        //        var data = 'Hello from JS button';
+        //        log('JS sending message', data);
+        //        bridge.send(data, function (responseData) {
+        //            log('JS got response', responseData);
+        //        })
+        //    }
+        //    document.body.appendChild(document.createElement('br'));
+        //    var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'));
+        //    callbackButton.innerHTML = 'Fire testObjcCallback';
+        //    callbackButton.onclick = function (e) {
+        //        e.preventDefault();
+        //        log('JS calling handler "testObjcCallback"');
+        //        bridge.callHandler('testObjcCallback', { 'foo': 'bar' }, function (response) {
+        //            log('JS got response', response);
+        //        });
+        //    }
+        //});
+</script>
