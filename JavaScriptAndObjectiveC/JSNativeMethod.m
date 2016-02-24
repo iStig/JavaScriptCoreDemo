@@ -5,7 +5,6 @@
 
 #import "JSNativeMethod.h"
 
-
 @implementation JSNativeMethod
 
 - (NSString *)imgCallBack:(NSString *)url {

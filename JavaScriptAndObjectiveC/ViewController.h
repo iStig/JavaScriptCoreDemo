@@ -63,17 +63,17 @@
 
 - (void)imgCallBack:(NSString *)url {
   // 调用JS的方法
-//  JSValue *jsParamFunc = self.jsContext[@"imgCallBack"];
+  //  JSValue *jsParamFunc = self.jsContext[@"imgCallBack"];
   
-//  self.jsContext[@"imgCallBack"] = ^(NSString *url){
-//
-//    
-//  };
-
+  //  self.jsContext[@"imgCallBack"] = ^(NSString *url){
+  //
+  //
+  //  };
+  
   JSValue *jsParamFunc = self.jsContext[@"imgCallBack"];
   [jsParamFunc callWithArguments:@[@{@"age": @10, @"name": @"lili", @"height": @158}]];
   
-//  [self.jsContext[@"imgCallBack"]  callWithArguments:@[@{@"age": @10, @"name": @"lili", @"height": @158}]];
+  //  [self.jsContext[@"imgCallBack"]  callWithArguments:@[@{@"age": @10, @"name": @"lili", @"height": @158}]];
   
 }
 
