@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JavaScriptAndObjectiveC/ViewController.m"
-            timestampString = "477568936.146436"
+            timestampString = "478063999.830264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-webViewDidFinishLoad:"
             landmarkType = "5">
             <Locations>
@@ -90,29 +90,77 @@
                   moduleName = "JavaScriptAndObjectiveC"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/istig/Documents/my%20files/GitHub/iOS%E5%92%8CJS%E8%B0%83%E7%94%A8/ios%20js%E4%BA%A4%E4%BA%92/IOSCallJsOrJsCallIOS-master/JavaScriptAndObjectiveC/JavaScriptAndObjectiveC/ViewController.m"
-                  timestampString = "477570220.677573"
+                  timestampString = "478063494.86078"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "340">
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "564">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__39-[ViewController webViewDidFinishLoad:]_block_invoke"
+                  symbolName = "__39-[ViewController webViewDidFinishLoad:]_block_invoke_2"
                   moduleName = "JavaScriptAndObjectiveC"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/istig/Documents/my%20files/GitHub/iOS%E5%92%8CJS%E8%B0%83%E7%94%A8/ios%20js%E4%BA%A4%E4%BA%92/IOSCallJsOrJsCallIOS-master/JavaScriptAndObjectiveC/JavaScriptAndObjectiveC/ViewController.m"
-                  timestampString = "477570220.677885"
+                  timestampString = "478063494.860935"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
                   offsetFromSymbolStart = "67">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JavaScriptAndObjectiveC/ViewController.m"
+            timestampString = "478063999.830264"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-webViewDidFinishLoad:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JavaScriptAndObjectiveC/ViewController.m"
+            timestampString = "478063493.844928"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-webViewDidFinishLoad:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JavaScriptAndObjectiveC/ViewController.m"
+            timestampString = "478063493.844928"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-webViewDidFinishLoad:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
