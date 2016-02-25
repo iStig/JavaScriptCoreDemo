@@ -19,7 +19,7 @@
 // JS调用此方法来调用OC的系统相册方法
 - (void)callSystemCamera;
 
-// JS调用Oc，然后在OC中通过调用JS方法来传值给JS。
+// JS调用OC,然后在OC中通过调用JS方法来传值给JS。
 - (void)jsCallObjcAndObjcCallJsWithDict:(NSDictionary *)params;
 
 // 在JS中调用时，函数名应该为showAlertMsg(arg1, arg2)

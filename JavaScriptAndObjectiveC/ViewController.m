@@ -53,12 +53,7 @@
     
 #warning using IOSTest.html
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"IOSTest" withExtension:@"html"];
-#warning using test.html
-    //    NSURL *url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"html"];
-    
-#warning using test url online
-    //    NSURL *url = [NSURL URLWithString:@"http://172.16.101.203:8080/IOSTest"];
-    
+
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:request];
     _webView.delegate = self;
@@ -85,17 +80,11 @@
   
 #warning using IOSTest.html
   JSNativeMethod *call = [[JSNativeMethod alloc] init];
+  //将JSNativeMethod封装到JavaScript函数AndroidCall()中
   self.jsContext[@"AndroidCall"] = call;
   call.jsContext = self.jsContext;
   
-  
-#warning using test.html
-  //   HYBJsObjCModel *model  = [[HYBJsObjCModel alloc] init];
-  //  self.jsContext[@"OCModel"] = model;
-  //  model.jsContext = self.jsContext;
-  //  model.webView = self.webView;
-  
-  // JSContext 还有另外一个有用的招数：通过设置上下文的 exceptionHandler 属性，你可以观察和记录语法，类型以及运行时错误。 exceptionHandler 是一个接收一个 JSContext 引用和异常本身的回调处理
+  //JSContext 还有另外一个有用的招数：通过设置上下文的 exceptionHandler 属性，你可以观察和记录语法，类型以及运行时错误。 exceptionHandler 是一个接收一个 JSContext 引用和异常本身的回调处理
   self.jsContext.exceptionHandler = ^(JSContext *context, JSValue *exceptionValue) {
     context.exception = exceptionValue;
     NSLog(@"异常信息：%@", exceptionValue);

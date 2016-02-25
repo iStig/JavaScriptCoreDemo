@@ -70,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				626804D91C7710A700DAD9DE /* IOSTest.html */,
-				69DA66071BCCA361006A614C /* test.html */,
 				6975C30C1BCC9C1300C0D101 /* AppDelegate.h */,
 				6975C30D1BCC9C1300C0D101 /* AppDelegate.m */,
 				6975C30F1BCC9C1300C0D101 /* ViewController.h */,
@@ -89,6 +88,7 @@
 		6975C3091BCC9C1300C0D101 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				69DA66071BCCA361006A614C /* test.html */,
 				6975C30A1BCC9C1300C0D101 /* main.m */,
 			);
 			name = "Supporting Files";

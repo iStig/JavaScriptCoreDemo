@@ -47,8 +47,6 @@
   
       <input type="button" value="Call ObjC func with JSON " onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
         <input type="button" value="Call ObjC func with JSON and ObjC call js func to pass args." onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
-       
-    
     <div>
       <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
     </div>
@@ -70,34 +68,37 @@
     alert('Objective-C call js to show alert');
   }
 
-var jsParamFunc = function(argument) {
+  var jsParamFunc = function(argument) {
   log(argument['name']);
 }
 
-    function androidTest() {
+function androidTest() {
         log("touch");
         if (window.AndroidCall) {
+           log("js androidTest");
            log(window.AndroidCall.imgCallBack('http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg'));
         }
         else {
             alert("window.AndroidCall is nil");
         }
-        
-    }
+}
 
+//app端callback callSystemCamera()
 function callSystemCamera() {
   log("callSystemCamera()");
   window.AndroidCall.callSystemCamera();
 }
 
+//app端callback showAlertMsg()
 function showAlertMsg(a,b) {
 
         log(JSON.stringify(a));
         log(JSON.stringify(b));
         
-          window.AndroidCall.showAlertMsg(a,b);
+        window.AndroidCall.showAlertMsg(a,b);
 }
 
+//app端callback callWithDict()
 function callWithDict(a) {
 
        log(JSON.stringify(a));
@@ -106,6 +107,7 @@ function callWithDict(a) {
 
 }
 
+//app端callback jsCallObjcAndObjcCallJsWithDict()
 function jsCallObjcAndObjcCallJsWithDict(a) {
 
          log(JSON.stringify(a));
@@ -144,3 +146,30 @@ function jsCallObjcAndObjcCallJsWithDict(a) {
         log("IOS/Android Test");
         
 </script>
+
+
+<!--//Android端代码-->
+<!--protected void addJsMethod() {-->
+<!--wv_content.addJavascriptInterface(new JSNativeMethod(), "AndroidCall");-->
+<!--}-->
+<!---->
+<!--final class JSNativeMethod {-->
+<!---->
+<!--@JavascriptInterface-->
+<!--public String imgCallBack(String url) {-->
+<!--//            Intent intent = new Intent(mContext, LoginActivity.class);-->
+<!--//startActivityForResult(intent, LOGIN_REQUEST);-->
+<!--//callBackUrl = url;-->
+<!--//saveInfoToSdcard("nativeLogin\n" + url + "\n" + new Date().toString());-->
+<!--//return url;-->
+<!--Toast.makeText(mContext, url, Toast.LENGTH_SHORT).show();-->
+<!--return "test android";-->
+<!--}-->
+<!---->
+<!--}-->
+<!---->
+<!--public void test(View view) {-->
+<!--wv_content.loadUrl("javascript:test()");-->
+<!--}-->
+
+
