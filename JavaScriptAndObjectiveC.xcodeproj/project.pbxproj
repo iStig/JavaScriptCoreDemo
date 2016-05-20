@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		626804D61C76C79C00DAD9DE /* JSNativeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 626804D51C76C79C00DAD9DE /* JSNativeMethod.m */; };
 		626804DA1C7710A700DAD9DE /* IOSTest.html in Resources */ = {isa = PBXBuildFile; fileRef = 626804D91C7710A700DAD9DE /* IOSTest.html */; };
+		62E819DF1CEF1143001547F4 /* GpsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E819DE1CEF1143001547F4 /* GpsManager.m */; };
 		6975C30B1BCC9C1300C0D101 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6975C30A1BCC9C1300C0D101 /* main.m */; };
 		6975C30E1BCC9C1300C0D101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6975C30D1BCC9C1300C0D101 /* AppDelegate.m */; };
 		6975C3111BCC9C1300C0D101 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6975C3101BCC9C1300C0D101 /* ViewController.m */; };
@@ -16,13 +17,14 @@
 		6975C3161BCC9C1300C0D101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6975C3151BCC9C1300C0D101 /* Assets.xcassets */; };
 		6975C3191BCC9C1300C0D101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6975C3171BCC9C1300C0D101 /* LaunchScreen.storyboard */; };
 		6975C3211BCC9D6A00C0D101 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6975C3201BCC9D6A00C0D101 /* JavaScriptCore.framework */; };
-		69DA66081BCCA361006A614C /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 69DA66071BCCA361006A614C /* test.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		626804D41C76C79C00DAD9DE /* JSNativeMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSNativeMethod.h; sourceTree = "<group>"; };
 		626804D51C76C79C00DAD9DE /* JSNativeMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSNativeMethod.m; sourceTree = "<group>"; };
 		626804D91C7710A700DAD9DE /* IOSTest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = IOSTest.html; sourceTree = "<group>"; };
+		62E819DD1CEF1143001547F4 /* GpsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GpsManager.h; sourceTree = "<group>"; };
+		62E819DE1CEF1143001547F4 /* GpsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GpsManager.m; sourceTree = "<group>"; };
 		6975C3061BCC9C1300C0D101 /* JavaScriptAndObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaScriptAndObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6975C30A1BCC9C1300C0D101 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6975C30C1BCC9C1300C0D101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -34,7 +36,6 @@
 		6975C3181BCC9C1300C0D101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6975C31A1BCC9C1300C0D101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6975C3201BCC9D6A00C0D101 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		69DA66071BCCA361006A614C /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +77,8 @@
 				6975C3101BCC9C1300C0D101 /* ViewController.m */,
 				626804D41C76C79C00DAD9DE /* JSNativeMethod.h */,
 				626804D51C76C79C00DAD9DE /* JSNativeMethod.m */,
+				62E819DD1CEF1143001547F4 /* GpsManager.h */,
+				62E819DE1CEF1143001547F4 /* GpsManager.m */,
 				6975C3121BCC9C1300C0D101 /* Main.storyboard */,
 				6975C3151BCC9C1300C0D101 /* Assets.xcassets */,
 				6975C3171BCC9C1300C0D101 /* LaunchScreen.storyboard */,
@@ -88,7 +91,6 @@
 		6975C3091BCC9C1300C0D101 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				69DA66071BCCA361006A614C /* test.html */,
 				6975C30A1BCC9C1300C0D101 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -151,7 +153,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69DA66081BCCA361006A614C /* test.html in Resources */,
 				626804DA1C7710A700DAD9DE /* IOSTest.html in Resources */,
 				6975C3191BCC9C1300C0D101 /* LaunchScreen.storyboard in Resources */,
 				6975C3161BCC9C1300C0D101 /* Assets.xcassets in Resources */,
@@ -167,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6975C3111BCC9C1300C0D101 /* ViewController.m in Sources */,
+				62E819DF1CEF1143001547F4 /* GpsManager.m in Sources */,
 				626804D61C76C79C00DAD9DE /* JSNativeMethod.m in Sources */,
 				6975C30E1BCC9C1300C0D101 /* AppDelegate.m in Sources */,
 				6975C30B1BCC9C1300C0D101 /* main.m in Sources */,

@@ -41,20 +41,21 @@
     
  
       
-  <h1>Test how to use objective-c call js</h1>
-      <input type="button" value="Call ObjC system camera" onclick="callSystemCamera()">
+  <h1>JS Call</h1>
+      <input type="button" value="Camera" onclick="callSystemCamera()">
+<!--        <input type="button" value="Location" onclick="callSystemCamera()">-->
         <input type="button" value="Call ObjC system alert" onclick="showAlertMsg('js title', 'js message')">
   
       <input type="button" value="Call ObjC func with JSON " onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
-        <input type="button" value="Call ObjC func with JSON and ObjC call js func to pass args." onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
+        <input type="button" value="Call System Location." onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
     <div>
       <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
     </div>
 
 
-<h1>Android#JS Test</h1>
-    <input type="button" onclick="androidTest()" value="Invoke Android:window.AndroidCall.imgCallBack('url')"/>
-    
+<!--<h1>Android#JS Test</h1>-->
+<!--    <input type="button" onclick="androidTest()" value="Invoke Android:window.MobilePhoneCall.imgCallBack('url')"/>-->
+
   
     
 </body>
@@ -69,24 +70,15 @@
   }
 
   var jsParamFunc = function(argument) {
-  log(argument['name']);
+  log(argument['latitude']);
+  log(argument['longitude']);
 }
 
-function androidTest() {
-        log("touch");
-        if (window.AndroidCall) {
-           log("js androidTest");
-           log(window.AndroidCall.imgCallBack('http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg'));
-        }
-        else {
-            alert("window.AndroidCall is nil");
-        }
-}
 
 //app端callback callSystemCamera()
 function callSystemCamera() {
-  log("callSystemCamera()");
-  window.AndroidCall.callSystemCamera();
+  log("call system camera");
+  window.MobilePhoneCall.callSystemCamera();
 }
 
 //app端callback showAlertMsg()
@@ -95,7 +87,7 @@ function showAlertMsg(a,b) {
         log(JSON.stringify(a));
         log(JSON.stringify(b));
         
-        window.AndroidCall.showAlertMsg(a,b);
+        window.MobilePhoneCall.showAlertMsg(a,b);
 }
 
 //app端callback callWithDict()
@@ -103,7 +95,7 @@ function callWithDict(a) {
 
        log(JSON.stringify(a));
        
-       window.AndroidCall.callWithDict(a);
+       window.MobilePhoneCall.callWithDict(a);
 
 }
 
@@ -111,7 +103,7 @@ function callWithDict(a) {
 function jsCallObjcAndObjcCallJsWithDict(a) {
 
          log(JSON.stringify(a));
-             window.AndroidCall.jsCallObjcAndObjcCallJsWithDict(a);
+             window.MobilePhoneCall.jsCallObjcAndObjcCallJsWithDict(a);
 }
 
 
@@ -120,12 +112,12 @@ function jsCallObjcAndObjcCallJsWithDict(a) {
         log("click img");
         log(JSON.stringify(src));
 
-        if (window.AndroidCall) {
+        if (window.MobilePhoneCall) {
             log("called>>>>>");
-            log(window.AndroidCall.imgCallBack('http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg'));
+            log(window.MobilePhoneCall.imgCallBack('http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg'));
         }
         else {
-            alert("window.AndroidCall is nil");
+            alert("window.MobilePhoneCall is nil");
         }
     }
 
@@ -143,33 +135,21 @@ function jsCallObjcAndObjcCallJsWithDict(a) {
             log('window.onerror: ' + err);
         }
 
-        log("IOS/Android Test");
+        log("Log Detail");
         
 </script>
 
 
-<!--//Android端代码-->
-<!--protected void addJsMethod() {-->
-<!--wv_content.addJavascriptInterface(new JSNativeMethod(), "AndroidCall");-->
+<!--function androidTest() {-->
+<!--        log("touch");-->
+<!--        if (window.MobilePhoneCall) {-->
+<!--           log("js androidTest");-->
+<!--           log(window.MobilePhoneCall.imgCallBack('http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg'));-->
+ <!--        }-->
+<!--        else {-->
+<!--            alert("window.MobilePhoneCall is nil");-->
+<!--        }-->
 <!--}-->
-<!---->
-<!--final class JSNativeMethod {-->
-<!---->
-<!--@JavascriptInterface-->
-<!--public String imgCallBack(String url) {-->
-<!--//            Intent intent = new Intent(mContext, LoginActivity.class);-->
-<!--//startActivityForResult(intent, LOGIN_REQUEST);-->
-<!--//callBackUrl = url;-->
-<!--//saveInfoToSdcard("nativeLogin\n" + url + "\n" + new Date().toString());-->
-<!--//return url;-->
-<!--Toast.makeText(mContext, url, Toast.LENGTH_SHORT).show();-->
-<!--return "test android";-->
-<!--}-->
-<!---->
-<!--}-->
-<!---->
-<!--public void test(View view) {-->
-<!--wv_content.loadUrl("javascript:test()");-->
-<!--}-->
+
 
 

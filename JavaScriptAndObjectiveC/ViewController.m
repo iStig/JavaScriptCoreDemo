@@ -4,6 +4,7 @@
 
 #import "ViewController.h"
 #import "JSNativeMethod.h"
+
 @interface ViewController () <UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
@@ -15,7 +16,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+
   [self.view addSubview:self.webView];
   
   // 一个JSContext对象，就类似于JS中的Window，只需要创建一次即可
@@ -50,10 +51,7 @@
     _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     _webView.scalesPageToFit = YES;
     
-    
-#warning using IOSTest.html
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"IOSTest" withExtension:@"html"];
-
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:request];
     _webView.delegate = self;
@@ -77,12 +75,12 @@
   
   //调用JS代码并且返回参数
   NSLog(@"%@", [self.jsContext evaluateScript:@"simplifyString('안녕하새요!')"]);
-  
-#warning using IOSTest.html
+
   JSNativeMethod *call = [[JSNativeMethod alloc] init];
-  //将JSNativeMethod封装到JavaScript函数AndroidCall()中
-  self.jsContext[@"AndroidCall"] = call;
+  //将JSNativeMethod封装到JavaScript函数MobilePhoneCall()中
+  self.jsContext[@"MobilePhoneCall"] = call;
   call.jsContext = self.jsContext;
+  call.viewController = self;
   
   //JSContext 还有另外一个有用的招数：通过设置上下文的 exceptionHandler 属性，你可以观察和记录语法，类型以及运行时错误。 exceptionHandler 是一个接收一个 JSContext 引用和异常本身的回调处理
   self.jsContext.exceptionHandler = ^(JSContext *context, JSValue *exceptionValue) {

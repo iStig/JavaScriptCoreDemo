@@ -1,11 +1,13 @@
-//
-//  AndroidCall.h
-//  JavaScriptAndObjectiveC
+
 
 
 #import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import "GpsManager.h"
 
 //首先创建一个实现了JSExport协议的协议
 @protocol TestJSObjectProtocol <JSExport>
@@ -25,8 +27,12 @@
 // 在JS中调用时，函数名应该为showAlertMsg(arg1, arg2)
 // 这里是只两个参数的。
 - (void)showAlert:(NSString *)title msg:(NSString *)msg;
+
 @end
 
-@interface JSNativeMethod : NSObject<TestJSObjectProtocol>
+@interface JSNativeMethod : NSObject<TestJSObjectProtocol,UIImagePickerControllerDelegate, UINavigationControllerDelegate,CLLocationManagerDelegate>
 @property (nonatomic, weak) JSContext *jsContext;
+@property (nonatomic, weak) UIViewController *viewController;
+@property (nonatomic, strong) UIImagePickerController *imagePickerController;
+@property (nonatomic, strong) CLLocationManager *manager;
 @end
