@@ -22,28 +22,28 @@
   // 一个JSContext对象，就类似于JS中的Window，只需要创建一次即可
   self.jsContext = [[JSContext alloc] init];
   
-  // jscontext可以直接执行JS代码
-  [self.jsContext evaluateScript:@"var num = 10"];
-  [self.jsContext evaluateScript:@"var names = ['Same','Jack','Bob']"];
-  [self.jsContext evaluateScript:@"var squareFunc = function(value) { return value * 2 }"];
-  
-  // 计算正方形的面积方法
-  JSValue *square = [self.jsContext evaluateScript:@"squareFunc(num)"];
-  
-  // 通过下标的方式获取到方法
-  JSValue *squareFunc = self.jsContext[@"squareFunc"];
-  
-  // 获取数组中第一个参数
-  JSValue *names = self.jsContext[@"names"];
-  JSValue *initialName = names[0];
-  
-  //JSValue包装了一个JS函数，我们可以从OC代码中使用Foundation类型作为参数来直接调用该函数
-  JSValue *value = [squareFunc callWithArguments:@[@"20"]];
-  
-  // 输出JS调用结果
-  NSLog(@"%@", square.toNumber);
-  NSLog(@"%d", value.toInt32);
-  NSLog(@"%@", initialName.toString);
+//  // jscontext可以直接执行JS代码
+//  [self.jsContext evaluateScript:@"var num = 10"];
+//  [self.jsContext evaluateScript:@"var names = ['Same','Jack','Bob']"];
+//  [self.jsContext evaluateScript:@"var squareFunc = function(value) { return value * 2 }"];
+//  
+//  // 计算正方形的面积方法
+//  JSValue *square = [self.jsContext evaluateScript:@"squareFunc(num)"];
+//  
+//  // 通过下标的方式获取到方法
+//  JSValue *squareFunc = self.jsContext[@"squareFunc"];
+//  
+//  // 获取数组中第一个参数
+//  JSValue *names = self.jsContext[@"names"];
+//  JSValue *initialName = names[0];
+//  
+//  //JSValue包装了一个JS函数，我们可以从OC代码中使用Foundation类型作为参数来直接调用该函数
+//  JSValue *value = [squareFunc callWithArguments:@[@"20"]];
+//  
+//  // 输出JS调用结果
+//  NSLog(@"%@", square.toNumber);
+//  NSLog(@"%d", value.toInt32);
+//  NSLog(@"%@", initialName.toString);
 }
 
 - (UIWebView *)webView {

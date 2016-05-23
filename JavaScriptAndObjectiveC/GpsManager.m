@@ -8,7 +8,6 @@
 
 #import "GpsManager.h"
 
-
 @implementation GpsManager
 
 + (id) sharedGpsManager {
@@ -63,6 +62,7 @@
 - (void) stop {
   [manager stopUpdatingLocation];
 }
+
 + (void) stop {
   [[GpsManager sharedGpsManager] stop];
 }

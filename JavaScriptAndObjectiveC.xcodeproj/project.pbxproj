@@ -10,6 +10,11 @@
 		626804D61C76C79C00DAD9DE /* JSNativeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 626804D51C76C79C00DAD9DE /* JSNativeMethod.m */; };
 		626804DA1C7710A700DAD9DE /* IOSTest.html in Resources */ = {isa = PBXBuildFile; fileRef = 626804D91C7710A700DAD9DE /* IOSTest.html */; };
 		62E819DF1CEF1143001547F4 /* GpsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E819DE1CEF1143001547F4 /* GpsManager.m */; };
+		62E819EC1CF14CD5001547F4 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E819E21CF14CD5001547F4 /* QRCameraSwitchButton.m */; };
+		62E819ED1CF14CD5001547F4 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E819E41CF14CD5001547F4 /* QRCodeReader.m */; };
+		62E819EE1CF14CD5001547F4 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E819E71CF14CD5001547F4 /* QRCodeReaderView.m */; };
+		62E819EF1CF14CD5001547F4 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E819E91CF14CD5001547F4 /* QRCodeReaderViewController.m */; };
+		62E819F01CF14CD5001547F4 /* QRToggleTorchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E819EB1CF14CD5001547F4 /* QRToggleTorchButton.m */; };
 		6975C30B1BCC9C1300C0D101 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6975C30A1BCC9C1300C0D101 /* main.m */; };
 		6975C30E1BCC9C1300C0D101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6975C30D1BCC9C1300C0D101 /* AppDelegate.m */; };
 		6975C3111BCC9C1300C0D101 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6975C3101BCC9C1300C0D101 /* ViewController.m */; };
@@ -25,6 +30,17 @@
 		626804D91C7710A700DAD9DE /* IOSTest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = IOSTest.html; sourceTree = "<group>"; };
 		62E819DD1CEF1143001547F4 /* GpsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GpsManager.h; sourceTree = "<group>"; };
 		62E819DE1CEF1143001547F4 /* GpsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GpsManager.m; sourceTree = "<group>"; };
+		62E819E11CF14CD5001547F4 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
+		62E819E21CF14CD5001547F4 /* QRCameraSwitchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCameraSwitchButton.m; sourceTree = "<group>"; };
+		62E819E31CF14CD5001547F4 /* QRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReader.h; sourceTree = "<group>"; };
+		62E819E41CF14CD5001547F4 /* QRCodeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReader.m; sourceTree = "<group>"; };
+		62E819E51CF14CD5001547F4 /* QRCodeReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderDelegate.h; sourceTree = "<group>"; };
+		62E819E61CF14CD5001547F4 /* QRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderView.h; sourceTree = "<group>"; };
+		62E819E71CF14CD5001547F4 /* QRCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderView.m; sourceTree = "<group>"; };
+		62E819E81CF14CD5001547F4 /* QRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderViewController.h; sourceTree = "<group>"; };
+		62E819E91CF14CD5001547F4 /* QRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewController.m; sourceTree = "<group>"; };
+		62E819EA1CF14CD5001547F4 /* QRToggleTorchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRToggleTorchButton.h; sourceTree = "<group>"; };
+		62E819EB1CF14CD5001547F4 /* QRToggleTorchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRToggleTorchButton.m; sourceTree = "<group>"; };
 		6975C3061BCC9C1300C0D101 /* JavaScriptAndObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaScriptAndObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6975C30A1BCC9C1300C0D101 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6975C30C1BCC9C1300C0D101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,9 +66,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62E819E01CF14CD5001547F4 /* QRCodeReaderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				62E819E11CF14CD5001547F4 /* QRCameraSwitchButton.h */,
+				62E819E21CF14CD5001547F4 /* QRCameraSwitchButton.m */,
+				62E819E31CF14CD5001547F4 /* QRCodeReader.h */,
+				62E819E41CF14CD5001547F4 /* QRCodeReader.m */,
+				62E819E51CF14CD5001547F4 /* QRCodeReaderDelegate.h */,
+				62E819E61CF14CD5001547F4 /* QRCodeReaderView.h */,
+				62E819E71CF14CD5001547F4 /* QRCodeReaderView.m */,
+				62E819E81CF14CD5001547F4 /* QRCodeReaderViewController.h */,
+				62E819E91CF14CD5001547F4 /* QRCodeReaderViewController.m */,
+				62E819EA1CF14CD5001547F4 /* QRToggleTorchButton.h */,
+				62E819EB1CF14CD5001547F4 /* QRToggleTorchButton.m */,
+			);
+			path = QRCodeReaderViewController;
+			sourceTree = "<group>";
+		};
 		6975C2FD1BCC9C1300C0D101 = {
 			isa = PBXGroup;
 			children = (
+				62E819E01CF14CD5001547F4 /* QRCodeReaderViewController */,
 				6975C3201BCC9D6A00C0D101 /* JavaScriptCore.framework */,
 				6975C3081BCC9C1300C0D101 /* JavaScriptAndObjectiveC */,
 				6975C3071BCC9C1300C0D101 /* Products */,
@@ -168,9 +203,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6975C3111BCC9C1300C0D101 /* ViewController.m in Sources */,
+				62E819EE1CF14CD5001547F4 /* QRCodeReaderView.m in Sources */,
+				62E819EC1CF14CD5001547F4 /* QRCameraSwitchButton.m in Sources */,
+				62E819ED1CF14CD5001547F4 /* QRCodeReader.m in Sources */,
 				62E819DF1CEF1143001547F4 /* GpsManager.m in Sources */,
 				626804D61C76C79C00DAD9DE /* JSNativeMethod.m in Sources */,
 				6975C30E1BCC9C1300C0D101 /* AppDelegate.m in Sources */,
+				62E819F01CF14CD5001547F4 /* QRToggleTorchButton.m in Sources */,
+				62E819EF1CF14CD5001547F4 /* QRCodeReaderViewController.m in Sources */,
 				6975C30B1BCC9C1300C0D101 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

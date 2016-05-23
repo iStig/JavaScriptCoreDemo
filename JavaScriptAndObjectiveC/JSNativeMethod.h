@@ -8,6 +8,9 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "GpsManager.h"
+#import "QRCodeReaderDelegate.h"
+#import "QRCodeReaderViewController.h"
+#import "QRCodeReader.h"
 
 //首先创建一个实现了JSExport协议的协议
 @protocol TestJSObjectProtocol <JSExport>
@@ -21,6 +24,9 @@
 // JS调用此方法来调用OC的系统相册方法
 - (void)callSystemCamera;
 
+// js调用系统扫一扫二维码
+- (void)callSystemQRScan;
+
 // JS调用OC,然后在OC中通过调用JS方法来传值给JS。
 - (void)jsCallObjcAndObjcCallJsWithDict:(NSDictionary *)params;
 
@@ -30,7 +36,7 @@
 
 @end
 
-@interface JSNativeMethod : NSObject<TestJSObjectProtocol,UIImagePickerControllerDelegate, UINavigationControllerDelegate,CLLocationManagerDelegate>
+@interface JSNativeMethod : NSObject<TestJSObjectProtocol,QRCodeReaderDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate,CLLocationManagerDelegate>
 @property (nonatomic, weak) JSContext *jsContext;
 @property (nonatomic, weak) UIViewController *viewController;
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;

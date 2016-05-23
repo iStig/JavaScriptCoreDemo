@@ -32,7 +32,7 @@
 
 
 <body>
-  <h1>IOS#JS TEST</h1>
+  <h1>Log List</h1>
    
     <div id='buttons'></div> <div id='log'></div>
     <div>
@@ -42,22 +42,14 @@
  
       
   <h1>JS Call</h1>
-      <input type="button" value="Camera" onclick="callSystemCamera()">
-<!--        <input type="button" value="Location" onclick="callSystemCamera()">-->
-        <input type="button" value="Call ObjC system alert" onclick="showAlertMsg('js title', 'js message')">
+      <input type="button" value="Call System Camera" onclick="callSystemCamera()">
+        <input type="button" value="Call QR Scan" onclick="callSystemQRScan()">
   
-      <input type="button" value="Call ObjC func with JSON " onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
-        <input type="button" value="Call System Location." onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
+<!--      <input type="button" value="Call ObjC func with JSON" onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">-->
+        <input type="button" value="Show System Location" onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
     <div>
       <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
     </div>
-
-
-<!--<h1>Android#JS Test</h1>-->
-<!--    <input type="button" onclick="androidTest()" value="Invoke Android:window.MobilePhoneCall.imgCallBack('url')"/>-->
-
-  
-    
 </body>
 
 </html>
@@ -65,8 +57,9 @@
 <script type="text/javascript">
   
   
-  var jsFunc = function() {
-    alert('Objective-C call js to show alert');
+  var jsFunc = function(argument) {
+    log(argument['scan']);
+
   }
 
   var jsParamFunc = function(argument) {
@@ -74,6 +67,11 @@
   log(argument['longitude']);
 }
 
+//app端callback callSystemQRScan()
+function callSystemQRScan() {
+  log("call system qr scan");
+  window.MobilePhoneCall.callSystemQRScan();
+}
 
 //app端callback callSystemCamera()
 function callSystemCamera() {
@@ -83,27 +81,21 @@ function callSystemCamera() {
 
 //app端callback showAlertMsg()
 function showAlertMsg(a,b) {
-
         log(JSON.stringify(a));
         log(JSON.stringify(b));
-        
         window.MobilePhoneCall.showAlertMsg(a,b);
 }
 
 //app端callback callWithDict()
-function callWithDict(a) {
-
-       log(JSON.stringify(a));
-       
-       window.MobilePhoneCall.callWithDict(a);
-
-}
+<!--function callWithDict(a) {-->
+<!--       log(JSON.stringify(a));-->
+<!--       window.MobilePhoneCall.callWithDict(a);-->
+<!--}-->
 
 //app端callback jsCallObjcAndObjcCallJsWithDict()
 function jsCallObjcAndObjcCallJsWithDict(a) {
-
-         log(JSON.stringify(a));
-             window.MobilePhoneCall.jsCallObjcAndObjcCallJsWithDict(a);
+<!--         log(JSON.stringify(a));-->
+        window.MobilePhoneCall.jsCallObjcAndObjcCallJsWithDict(a);
 }
 
 
@@ -135,21 +127,9 @@ function jsCallObjcAndObjcCallJsWithDict(a) {
             log('window.onerror: ' + err);
         }
 
-        log("Log Detail");
         
 </script>
 
-
-<!--function androidTest() {-->
-<!--        log("touch");-->
-<!--        if (window.MobilePhoneCall) {-->
-<!--           log("js androidTest");-->
-<!--           log(window.MobilePhoneCall.imgCallBack('http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg'));-->
- <!--        }-->
-<!--        else {-->
-<!--            alert("window.MobilePhoneCall is nil");-->
-<!--        }-->
-<!--}-->
 
 
 
