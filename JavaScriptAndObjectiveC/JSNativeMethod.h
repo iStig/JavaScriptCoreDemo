@@ -12,6 +12,9 @@
 #import "QRCodeReaderViewController.h"
 #import "QRCodeReader.h"
 
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
+
 //首先创建一个实现了JSExport协议的协议
 @protocol TestJSObjectProtocol <JSExport>
 
@@ -20,6 +23,9 @@
 
 // 通过JSON传过来
 - (void)callWithDict:(NSDictionary *)params;
+
+// 第三方分享
+- (void)shareSDK;
 
 // JS调用此方法来调用OC的系统相册方法
 - (void)callSystemCamera;

@@ -36,16 +36,17 @@
    
     <div id='buttons'></div> <div id='log'></div>
     <div>
-        <img id="img" src="http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg" onclick="imgCallBack(this.src)" />
+<!--        <img id="img" src="http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg" onclick="imgCallBack(this.src)" />-->
     </div>
     
  
       
   <h1>JS Call</h1>
+   <input type="button" value="share" onclick="shareSDK()">
       <input type="button" value="Call System Camera" onclick="callSystemCamera()">
         <input type="button" value="Call QR Scan" onclick="callSystemQRScan()">
   
-<!--      <input type="button" value="Call ObjC func with JSON" onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">-->
+      <input type="button" value="upload image" onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
         <input type="button" value="Show System Location" onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
     <div>
       <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
@@ -55,7 +56,9 @@
 </html>
 
 <script type="text/javascript">
-  
+  var uploadimage = function(argument) {
+    log(argument['image']);
+  }
   
   var jsFunc = function(argument) {
     log(argument['scan']);
@@ -65,6 +68,11 @@
   var jsParamFunc = function(argument) {
   log(argument['latitude']);
   log(argument['longitude']);
+}
+
+function shareSDK() {
+  log("share");
+  window.MobilePhoneCall.shareSDK();
 }
 
 //app端callback callSystemQRScan()
@@ -87,10 +95,10 @@ function showAlertMsg(a,b) {
 }
 
 //app端callback callWithDict()
-<!--function callWithDict(a) {-->
-<!--       log(JSON.stringify(a));-->
-<!--       window.MobilePhoneCall.callWithDict(a);-->
-<!--}-->
+function callWithDict(a) {
+<!--      log(JSON.stringify(a));-->
+       window.MobilePhoneCall.callWithDict(a);
+}
 
 //app端callback jsCallObjcAndObjcCallJsWithDict()
 function jsCallObjcAndObjcCallJsWithDict(a) {
