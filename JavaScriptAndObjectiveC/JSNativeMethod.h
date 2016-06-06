@@ -14,7 +14,10 @@
 
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
-
+#import "Order.h"
+#import "DataSigner.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "Product.h"
 //首先创建一个实现了JSExport协议的协议
 @protocol TestJSObjectProtocol <JSExport>
 
@@ -32,6 +35,9 @@
 
 // js调用系统扫一扫二维码
 - (void)callSystemQRScan;
+
+// JS调用支付
+- (void)jsCallPayment:(NSDictionary *)price;
 
 // JS调用OC,然后在OC中通过调用JS方法来传值给JS。
 - (void)jsCallObjcAndObjcCallJsWithDict:(NSDictionary *)params;

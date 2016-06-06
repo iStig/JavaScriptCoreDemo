@@ -42,6 +42,7 @@
  
       
   <h1>JS Call</h1>
+   <input type="button" value="pay" onclick="jsCallPayment({'price':'0.02'})">
    <input type="button" value="share" onclick="shareSDK()">
       <input type="button" value="Call System Camera" onclick="callSystemCamera()">
         <input type="button" value="Call QR Scan" onclick="callSystemQRScan()">
@@ -64,6 +65,11 @@
     log(argument['scan']);
 
   }
+
+
+var paysuccess = function(argument) {
+    log(argument['paysuccess']);
+}
 
   var jsParamFunc = function(argument) {
   log(argument['latitude']);
@@ -104,6 +110,11 @@ function callWithDict(a) {
 function jsCallObjcAndObjcCallJsWithDict(a) {
 <!--         log(JSON.stringify(a));-->
         window.MobilePhoneCall.jsCallObjcAndObjcCallJsWithDict(a);
+}
+
+function jsCallPayment(a) {
+  log(JSON.stringify(a));
+  window.MobilePhoneCall.jsCallPayment(a);
 }
 
 
