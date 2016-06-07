@@ -43,7 +43,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
   
-  [ShareSDK registerApp:@"1314c9fb0cebc" //dabe18126c45a5b2066cfb6df3d9889a
+  [ShareSDK registerApp:@"1314c9fb0cebc"
         activePlatforms:@[@(SSDKPlatformTypeSinaWeibo),
                           @(SSDKPlatformTypeTencentWeibo),
                           @(SSDKPlatformTypeWechat),

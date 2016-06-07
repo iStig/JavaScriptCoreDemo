@@ -121,10 +121,10 @@
   if (imageArray) {
     
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-    [shareParams SSDKSetupShareParamsByText:@"分享内容"
+    [shareParams SSDKSetupShareParamsByText:@"只是我的分享"
                                      images:imageArray
-                                        url:[NSURL URLWithString:@"http://mob.com"]
-                                      title:@"分享标题"
+                                        url:[NSURL URLWithString:@"https://www.baidu.com/"]
+                                      title:@"我是testjs"
                                        type:SSDKContentTypeAuto];
     //2、分享（可以弹出我们的分享菜单和编辑界面）
     [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
