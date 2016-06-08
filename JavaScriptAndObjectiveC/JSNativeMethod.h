@@ -18,6 +18,8 @@
 #import "DataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "Product.h"
+#import "AFNetworking.h"
+
 //首先创建一个实现了JSExport协议的协议
 @protocol TestJSObjectProtocol <JSExport>
 
@@ -48,7 +50,7 @@
 
 @end
 
-@interface JSNativeMethod : NSObject<TestJSObjectProtocol,QRCodeReaderDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate,CLLocationManagerDelegate>
+@interface JSNativeMethod : NSObject<TestJSObjectProtocol,QRCodeReaderDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate,CLLocationManagerDelegate,NSURLSessionDelegate>
 @property (nonatomic, weak) JSContext *jsContext;
 @property (nonatomic, weak) UIViewController *viewController;
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;

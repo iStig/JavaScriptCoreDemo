@@ -10,109 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JavaScriptAndObjectiveC/JSNativeMethod.m"
-            timestampString = "486877272.553032"
+            timestampString = "487070339.286971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "-jsCallObjcAndObjcCallJsWithDict:"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
+            landmarkName = "-postdata:"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JavaScriptAndObjectiveC/JSNativeMethod.m"
-            timestampString = "486878000.366382"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4"
-            endingLineNumber = "4"
-            landmarkName = "-imgCallBack:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alipay/Util/openssl_wrapper.m"
-            timestampString = "486884076.23827"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "rsa_verify_with_public_key_pem()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JavaScriptAndObjectiveC/JSNativeMethod.m"
-            timestampString = "486891579.598114"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
-            landmarkName = "-reader:didScanResult:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JavaScriptAndObjectiveC/JSNativeMethod.m"
-            timestampString = "486891572.141957"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "-jsCallPayment:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[JSNativeMethod jsCallPayment:]_block_invoke"
-                  moduleName = "JavaScriptAndObjectiveC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/istig/Documents/my%20files/GitHub/iOS%E5%92%8CJS%E8%B0%83%E7%94%A8/ios%20js%E4%BA%A4%E4%BA%92/IOSCallJsOrJsCallIOS-master/JavaScriptAndObjectiveC/JavaScriptAndObjectiveC/JSNativeMethod.m"
-                  timestampString = "486973176.424075"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[JSNativeMethod jsCallPayment:]_block_invoke_2"
-                  moduleName = "JavaScriptAndObjectiveC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/istig/Documents/my%20files/GitHub/iOS%E5%92%8CJS%E8%B0%83%E7%94%A8/ios%20js%E4%BA%A4%E4%BA%92/IOSCallJsOrJsCallIOS-master/JavaScriptAndObjectiveC/JavaScriptAndObjectiveC/JSNativeMethod.m"
-                  timestampString = "486973176.424191"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

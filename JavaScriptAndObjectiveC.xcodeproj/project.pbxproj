@@ -19,6 +19,7 @@
 		6231B2371D0530BD00C4AEFF /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6231B22D1D0530BD00C4AEFF /* openssl_wrapper.m */; };
 		6231B2381D0530BD00C4AEFF /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6231B22F1D0530BD00C4AEFF /* RSADataSigner.m */; };
 		6231B2391D0530BD00C4AEFF /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6231B2311D0530BD00C4AEFF /* RSADataVerifier.m */; };
+		624D32381D0725F500BD2F42 /* spec.png in Resources */ = {isa = PBXBuildFile; fileRef = 624D32371D0725F500BD2F42 /* spec.png */; };
 		625524921CF302360069FF89 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625524701CF302360069FF89 /* ShareSDK.framework */; };
 		625524931CF302360069FF89 /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625524731CF302360069FF89 /* ShareSDKExtension.framework */; };
 		625524941CF302360069FF89 /* ShareSDKUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 625524741CF302360069FF89 /* ShareSDKUI.bundle */; };
@@ -166,6 +167,7 @@
 		6231B22F1D0530BD00C4AEFF /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		6231B2301D0530BD00C4AEFF /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		6231B2311D0530BD00C4AEFF /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		624D32371D0725F500BD2F42 /* spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spec.png; sourceTree = "<group>"; };
 		625524701CF302360069FF89 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		625524731CF302360069FF89 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
 		625524741CF302360069FF89 /* ShareSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKUI.bundle; sourceTree = "<group>"; };
@@ -567,6 +569,7 @@
 				6975C3101BCC9C1300C0D101 /* ViewController.m */,
 				626804D41C76C79C00DAD9DE /* JSNativeMethod.h */,
 				626804D51C76C79C00DAD9DE /* JSNativeMethod.m */,
+				624D32371D0725F500BD2F42 /* spec.png */,
 				6201BAB41D0555B900EEB665 /* Product.h */,
 				6201BAB51D0555B900EEB665 /* Product.m */,
 				62E819DD1CEF1143001547F4 /* GpsManager.h */,
@@ -665,6 +668,7 @@
 				626804DA1C7710A700DAD9DE /* IOSTest.html in Resources */,
 				6975C3191BCC9C1300C0D101 /* LaunchScreen.storyboard in Resources */,
 				625524941CF302360069FF89 /* ShareSDKUI.bundle in Resources */,
+				624D32381D0725F500BD2F42 /* spec.png in Resources */,
 				625524991CF302360069FF89 /* WeiboSDK.bundle in Resources */,
 				6975C3161BCC9C1300C0D101 /* Assets.xcassets in Resources */,
 				6255249B1CF302360069FF89 /* README.txt in Resources */,
@@ -887,7 +891,11 @@
 					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-l\"AFNetworking\"",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.testjs.js;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -928,7 +936,11 @@
 					"$(PROJECT_DIR)/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-l\"AFNetworking\"",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.testjs.js;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7f02303a-c5c4-4d85-b42d-5ec00e9043c1";

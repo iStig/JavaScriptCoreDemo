@@ -1,4 +1,5 @@
 #import "JSNativeMethod.h"
+
 @implementation JSNativeMethod
 
 - (NSString *)imgCallBack:(NSString *)url {
@@ -228,7 +229,23 @@
   NSString *mediaType=[info objectForKey:UIImagePickerControllerMediaType];
   
   if ([mediaType isEqualToString:(NSString *)kUTTypeImage]){
+//     NSURL *theImage = [info objectForKey:UIImagePickerControllerReferenceURL];
+//    [self postImageToSever:theImage];
+    
+//    UIImage *theImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+//    [self POSTIMAGE:theImage];
+    
+//    NSURL *theImage = [info objectForKey:UIImagePickerControllerReferenceURL];
+//    [self post:theImage];
+    
+    
+    UIImage *theImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSData *imgeData = UIImageJPEGRepresentation(theImage,1);
+    [self  postdata:imgeData];
+    
+
   }else{
+  
   }
   [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -269,5 +286,229 @@
   }
   return resultStr;
 }
+
+
+
+#pragma mark - post上传头像
+
+- (void)postImageToSever:(NSURL *)image {
+  
+  //获取地址
+  
+  NSString *path = @"http://pic.jumaquan.com:4869/upload";//下载管理类的对象
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];//默认传输的数据类型是二进制
+  
+  manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+  
+  //第三个参数：进行上传数据的保存操作
+  
+  [manager POST:path parameters:nil constructingBodyWithBlock:^(id formData) {
+    
+    //找到要上传的图片
+    
+  NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"spec.png" ofType:nil];
+    
+    /*
+     
+     第一个参数：将要上传的数据的原始路径
+     
+     第二个参数：要上传的路径的key
+     
+     第三个参数：上传后文件的别名
+     
+     第四个参数：原始图片的格式
+     
+     */
+    
+     [formData appendPartWithFileURL:[NSURL URLWithString:imagePath] name:@"file" fileName:@"2345.png" mimeType:@"image.jpg" error:nil];
+    
+//    [formData appendPartWithFileURL:image name:@"file" fileName:@"2345.png" mimeType:@"image.jpg" error:nil];
+    
+  } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@",str);
+    
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    
+    NSLog(@"%@",error.description);
+    
+  }];
+  
+}
+
+
+- (void)POSTIMAGE:(UIImage *)image {
+
+  NSURLSession *session = [NSURLSession sharedSession];
+  
+  
+  
+  NSURL *url = [NSURL URLWithString:@"http://pic.jumaquan.com:4869/upload"];
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+  // 设置请求头数据 。  boundary：边界
+  [request setValue:@"multipart/form-data; boundary=----WebKitFormBoundaryftnnT7s3iF7wV5q6" forHTTPHeaderField:@"Content-Type"];
+  
+  // 给请求头加入固定格式数据
+  NSMutableData *data = [NSMutableData data];
+  /****************文件参数相关设置*********************/
+  // 设置边界 注：必须和请求头数据设置的边界 一样， 前面多两个“-”；（字符串 转 data 数据）
+  [data appendData:[@"------WebKitFormBoundaryftnnT7s3iF7wV5q6" dataUsingEncoding:NSUTF8StringEncoding]];
+  [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+  // 设置传入数据的基本属性， 包括有 传入方式 data ，传入的类型（名称） ，传入的文件名， 。
+  [data appendData:[@"Content-Disposition: form-data; name=\"file\"; filename=\"image.jpeg\"" dataUsingEncoding:NSUTF8StringEncoding]];
+  [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+  
+  // 设置 内容的类型  “文件类型/扩展名” MIME中的
+  [data appendData:[@"Content-Type: image/jpeg" dataUsingEncoding:NSUTF8StringEncoding]];
+  [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+  // 加入数据内容
+  NSData *contentData = UIImageJPEGRepresentation(image, 1.0);
+  
+//  NSData *contentData = [NSData dataWithContentsOfFile:@"/Users/liujiaxin/Desktop/image.jpeg"];
+  [data appendData:contentData];
+  [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+  [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+  // 设置边界
+  [data appendData:[@"------WebKitFormBoundaryftnnT7s3iF7wV5q6" dataUsingEncoding:NSUTF8StringEncoding]];
+  [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+  /******************非文件参数相关设置**********************/
+  //  设置传入的类型（名称）
+  [data appendData:[@"Content-Disposition: form-data; name=\"username\"" dataUsingEncoding:NSUTF8StringEncoding]];
+  [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+  [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+  
+  // 传入的名称username = lxl
+  [data appendData:[@"lxl" dataUsingEncoding:NSUTF8StringEncoding]];
+  [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+  // 退出边界
+  [data appendData:[@"------WebKitFormBoundaryftnnT7s3iF7wV5q6--" dataUsingEncoding:NSUTF8StringEncoding]];
+  [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+  
+  
+  request.HTTPBody = data;
+  request.HTTPMethod = @"POST";
+  NSURLSessionUploadTask *task = [session uploadTaskWithRequest:request fromData:data completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+   
+    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@",str);
+    
+  }];
+  [task resume];
+  NSLog(@"+++++++++++++");
+}
+
+- (void)post:(NSURL *)url {
+
+  NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://pic.jumaquan.com:4869/upload" parameters:nil constructingBodyWithBlock:^(id formData) {
+    
+    [formData appendPartWithFileURL:url name:@"file" fileName:@"filename.jpg" mimeType:@"image/jpeg" error:nil];
+    
+  } error:nil];
+  
+  AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+  
+  NSProgress *progress = nil;
+  
+  NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithStreamedRequest:request progress:&progress completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    
+    if (error) {
+      
+      NSLog(@"Error: %@", error);
+      
+    } else {
+      
+      NSLog(@"%@ %@", response, responseObject);
+      
+    }
+    
+  }];
+  
+  [uploadTask resume];
+  
+}
+
+- (void)postdata:(NSData *)imageData {
+
+  NSString *path = @"http://pic.jumaquan.com:4869/upload";
+  NSString *Boundary = @"AaB03x";
+  NSMutableData *bodyData =  [self generateRequestWithPhotoData:imageData FileName:@"fasdf.jpg"];
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:path]];
+  
+  NSString *content=[[NSString alloc]initWithFormat:@"multipart/form-data; boundary=%@",Boundary];
+  [request setValue:content forHTTPHeaderField:@"Content-Type"];
+  [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[bodyData length]] forHTTPHeaderField:@"Content-Length"];
+  [request setHTTPMethod:@"POST"];
+  
+  NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+  NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+  NSURLSessionUploadTask * uploadtask = [session uploadTaskWithRequest:request fromData:bodyData completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSRange range = [str rangeOfString:@"href=\""];
+    
+    NSLog(@"rang:%@",NSStringFromRange(range));
+    str = [str substringFromIndex:(range.location+6)];//截取范围类的字符串
+
+    
+    NSRange  ra = [str rangeOfString:@"\">http"];
+    
+    str = [str substringToIndex:ra.location];
+
+    
+    NSString *imageurl = [NSString stringWithFormat:@"http://pic.jumaquan.com:4869%@",str];
+     NSLog(@"%@",imageurl);
+    
+    JSValue *jsFunc = self.jsContext[@"uploadimage"];
+    [jsFunc callWithArguments:@[@{@"image":imageurl}]];
+    
+  }];
+  
+  [uploadtask resume];
+}
+
+
+- (NSString *)getStringElementForKey:(id)key fromDict:(NSDictionary *)dict
+{
+  if(![dict isKindOfClass:[NSDictionary class]])
+    return @"";
+  
+  NSString *result = @"";
+  id value = [dict objectForKey:key];
+  if (value) {
+    if ([value isKindOfClass:[NSString class]]) {
+      result = value;
+    } else if ([value isKindOfClass:[NSNumber class]]) {
+      result = [(NSNumber *)value stringValue];
+    }
+  }
+  return result;
+  
+}
+
+- (NSMutableData *)generateRequestWithPhotoData:(NSData *)photoData FileName:(NSString *)fileName{
+  NSString *Boundary =@"AaB03x";
+  NSString *MPboundary=[[NSString alloc]initWithFormat:@"--%@",Boundary];
+  NSString *endMPboundary=[[NSString alloc]initWithFormat:@"%@--",MPboundary];
+  NSData *data = photoData;
+  NSMutableString *body=[[NSMutableString alloc]init];
+  
+  [body appendFormat:@"%@\r\n",MPboundary];
+  [body appendFormat:@"Content-Disposition: form-data; name=\"photo\"; filename=\"%@\"\r\n",fileName];
+  [body appendFormat:@"Content-Type: image/jpeg\r\n\r\n"];
+  
+  NSString *end=[[NSString alloc]initWithFormat:@"\r\n%@",endMPboundary];
+  NSMutableData *myRequestData=[NSMutableData data];
+  [myRequestData appendData:[body dataUsingEncoding:NSUTF8StringEncoding]];
+  [myRequestData appendData:data];
+  [myRequestData appendData:[end dataUsingEncoding:NSUTF8StringEncoding]];
+  return myRequestData;
+}
+
+-(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend{
+  NSLog(@"%f",totalBytesSent/(float)totalBytesExpectedToSend);
+}
+
 
 @end

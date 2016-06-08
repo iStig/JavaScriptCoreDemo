@@ -32,10 +32,10 @@
 
 
 <body>
-  <h1>Log List</h1>
-   
-    <div id='buttons'></div> <div id='log'></div>
-    <div>
+<h1>Log List</h1>
+<ul id="parentUl"></ul>
+<div id='buttons'></div> <div id='log'></div>
+<div>
 <!--        <img id="img" src="http://huizuche.com/Content/Images/recommend/car/Jeep_Grand%20Cherokee_L.jpg" onclick="imgCallBack(this.src)" />-->
     </div>
     
@@ -58,7 +58,9 @@
 
 <script type="text/javascript">
   var uploadimage = function(argument) {
-    log(argument['image']);
+log(argument['image'])
+addElementImg(argument['image']);
+
   }
   
   var jsFunc = function(argument) {
@@ -85,6 +87,10 @@ function shareSDK() {
 function callSystemQRScan() {
   log("call system qr scan");
   window.MobilePhoneCall.callSystemQRScan();
+}
+
+function test() {
+  log("test");
 }
 
 //app端callback callSystemCamera()
@@ -118,6 +124,15 @@ function jsCallPayment(a) {
 }
 
 
+function addElementImg(obj) {
+var ul = document.getElementById("parentUl");
+var li = document.createElement("li");
+var img = document.createElement("img");
+img.setAttribute("id", "newImg");
+img.src = obj;
+li.appendChild(img);
+ul.appendChild(li);
+}
 
     function imgCallBack(src) {
         log("click img");
