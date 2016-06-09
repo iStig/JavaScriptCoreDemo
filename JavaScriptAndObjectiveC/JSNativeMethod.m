@@ -240,8 +240,27 @@
     
     
     UIImage *theImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-    NSData *imgeData = UIImageJPEGRepresentation(theImage,1);
+    
+        //   NSData *imgeData = UIImageJPEGRepresentation(theImage,1);
+    
+    
+//    
+//    UIImage *a = [self resizeImage:theImage withWidth:80 withHeight:142];
+//    
+//    
+//    NSData *imgeData = UIImageJPEGRepresentation(a,1);
+    
+    
+    
+    
+    NSData *imgeData = [self imageWithImage:theImage scaledToSize:CGSizeMake(160, 284)];
+    
+
     [self  postdata:imgeData];
+    
+    
+    
+    
     
 
   }else{
@@ -510,5 +529,39 @@
   NSLog(@"%f",totalBytesSent/(float)totalBytesExpectedToSend);
 }
 
+- (UIImage*)resizeImage:(UIImage*)image withWidth:(CGFloat)width withHeight:(CGFloat)height
+{
+  CGSize newSize = CGSizeMake(width, height);
+  CGFloat widthRatio = newSize.width/image.size.width;
+  CGFloat heightRatio = newSize.height/image.size.height;
+  
+  if(widthRatio > heightRatio)
+  {
+    newSize=CGSizeMake(image.size.width*heightRatio,image.size.height*heightRatio);
+  }
+  else
+  {
+    newSize=CGSizeMake(image.size.width*widthRatio,image.size.height*widthRatio);
+  }
+  
+  
+  UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+  [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+  UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  
+  return newImage;
+}
+
+
+- (NSData *)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize;
+{
+  UIGraphicsBeginImageContext(newSize);
+  [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+  UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  return UIImageJPEGRepresentation(newImage, 0.8);
+}
 
 @end
