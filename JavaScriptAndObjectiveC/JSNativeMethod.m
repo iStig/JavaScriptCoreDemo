@@ -1,4 +1,6 @@
 #import "JSNativeMethod.h"
+#import "RxWebViewController.h"
+#import "RxWebViewNavigationViewController.h"
 
 @implementation JSNativeMethod
 
@@ -170,9 +172,6 @@
 
 #pragma mark scan
 - (void)scan {
-  
-  NSLog(@"scan56");
-  
   if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
     static QRCodeReaderViewController *vc = nil;
     static dispatch_once_t onceToken;
@@ -238,33 +237,14 @@
 //    NSURL *theImage = [info objectForKey:UIImagePickerControllerReferenceURL];
 //    [self post:theImage];
     
-    
     UIImage *theImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+//   NSData *imgeData = UIImageJPEGRepresentation(theImage,1);
     
-        //   NSData *imgeData = UIImageJPEGRepresentation(theImage,1);
-    
-    
-//    
 //    UIImage *a = [self resizeImage:theImage withWidth:80 withHeight:142];
-//    
-//    
 //    NSData *imgeData = UIImageJPEGRepresentation(a,1);
-    
-    
-    
-    
+   
     NSData *imgeData = [self imageWithImage:theImage scaledToSize:CGSizeMake(160, 284)];
-    
-
     [self  postdata:imgeData];
-    
-    
-    
-    
-    
-
-  }else{
-  
   }
   [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -274,6 +254,13 @@
 - (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
 {
   [self.viewController dismissViewControllerAnimated:YES completion:^{
+    
+    
+    if ([result containsString:@"http"]) {
+      RxWebViewController* webViewController = [[RxWebViewController alloc] initWithUrl:[NSURL URLWithString:result]];
+      [self.viewController.navigationController pushViewController:webViewController animated:YES];
+    }
+    
   }];
   // JS调用后OC后，又通过OC调用JS，但是这个是没有传参数的
   JSValue *jsFunc = self.jsContext[@"jsFunc"];
@@ -288,8 +275,6 @@
 #pragma mark --payment 
 #pragma mark -
 #pragma mark   ==============产生随机订单号==============
-
-
 - (NSString *)generateTradeNO
 {
   static int kNumber = 15;
@@ -306,10 +291,7 @@
   return resultStr;
 }
 
-
-
 #pragma mark - post上传头像
-
 - (void)postImageToSever:(NSURL *)image {
   
   //获取地址
@@ -359,11 +341,7 @@
 
 
 - (void)POSTIMAGE:(UIImage *)image {
-
   NSURLSession *session = [NSURLSession sharedSession];
-  
-  
-  
   NSURL *url = [NSURL URLWithString:@"http://pic.jumaquan.com:4869/upload"];
   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
   // 设置请求头数据 。  boundary：边界

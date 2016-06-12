@@ -19,6 +19,12 @@
 		6231B2371D0530BD00C4AEFF /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6231B22D1D0530BD00C4AEFF /* openssl_wrapper.m */; };
 		6231B2381D0530BD00C4AEFF /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6231B22F1D0530BD00C4AEFF /* RSADataSigner.m */; };
 		6231B2391D0530BD00C4AEFF /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6231B2311D0530BD00C4AEFF /* RSADataVerifier.m */; };
+		6238C5E61D0D3F0E00269025 /* backItemImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6238C5DB1D0D3F0E00269025 /* backItemImage@2x.png */; };
+		6238C5E71D0D3F0E00269025 /* backItemImage_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6238C5DC1D0D3F0E00269025 /* backItemImage_hl@2x.png */; };
+		6238C5E81D0D3F0E00269025 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 6238C5DF1D0D3F0E00269025 /* NJKWebViewProgress.m */; };
+		6238C5E91D0D3F0E00269025 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6238C5E11D0D3F0E00269025 /* NJKWebViewProgressView.m */; };
+		6238C5EA1D0D3F0E00269025 /* RxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6238C5E31D0D3F0E00269025 /* RxWebViewController.m */; };
+		6238C5EB1D0D3F0E00269025 /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6238C5E51D0D3F0E00269025 /* RxWebViewNavigationViewController.m */; };
 		624D32381D0725F500BD2F42 /* spec.png in Resources */ = {isa = PBXBuildFile; fileRef = 624D32371D0725F500BD2F42 /* spec.png */; };
 		625524921CF302360069FF89 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625524701CF302360069FF89 /* ShareSDK.framework */; };
 		625524931CF302360069FF89 /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625524731CF302360069FF89 /* ShareSDKExtension.framework */; };
@@ -167,6 +173,16 @@
 		6231B22F1D0530BD00C4AEFF /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		6231B2301D0530BD00C4AEFF /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		6231B2311D0530BD00C4AEFF /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		6238C5DB1D0D3F0E00269025 /* backItemImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backItemImage@2x.png"; sourceTree = "<group>"; };
+		6238C5DC1D0D3F0E00269025 /* backItemImage_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backItemImage_hl@2x.png"; sourceTree = "<group>"; };
+		6238C5DE1D0D3F0E00269025 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		6238C5DF1D0D3F0E00269025 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		6238C5E01D0D3F0E00269025 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		6238C5E11D0D3F0E00269025 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		6238C5E21D0D3F0E00269025 /* RxWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewController.h; sourceTree = "<group>"; };
+		6238C5E31D0D3F0E00269025 /* RxWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewController.m; sourceTree = "<group>"; };
+		6238C5E41D0D3F0E00269025 /* RxWebViewNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewNavigationViewController.h; sourceTree = "<group>"; };
+		6238C5E51D0D3F0E00269025 /* RxWebViewNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewNavigationViewController.m; sourceTree = "<group>"; };
 		624D32371D0725F500BD2F42 /* spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spec.png; sourceTree = "<group>"; };
 		625524701CF302360069FF89 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		625524731CF302360069FF89 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
@@ -419,6 +435,31 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		6238C5DA1D0D3F0E00269025 /* RxWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6238C5DB1D0D3F0E00269025 /* backItemImage@2x.png */,
+				6238C5DC1D0D3F0E00269025 /* backItemImage_hl@2x.png */,
+				6238C5DD1D0D3F0E00269025 /* NJKWebViewProgress */,
+				6238C5E21D0D3F0E00269025 /* RxWebViewController.h */,
+				6238C5E31D0D3F0E00269025 /* RxWebViewController.m */,
+				6238C5E41D0D3F0E00269025 /* RxWebViewNavigationViewController.h */,
+				6238C5E51D0D3F0E00269025 /* RxWebViewNavigationViewController.m */,
+			);
+			path = RxWebViewController;
+			sourceTree = "<group>";
+		};
+		6238C5DD1D0D3F0E00269025 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				6238C5DE1D0D3F0E00269025 /* NJKWebViewProgress.h */,
+				6238C5DF1D0D3F0E00269025 /* NJKWebViewProgress.m */,
+				6238C5E01D0D3F0E00269025 /* NJKWebViewProgressView.h */,
+				6238C5E11D0D3F0E00269025 /* NJKWebViewProgressView.m */,
+			);
+			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
 		6255246F1CF302360069FF89 /* ShareSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +571,7 @@
 		6975C2FD1BCC9C1300C0D101 = {
 			isa = PBXGroup;
 			children = (
+				6238C5DA1D0D3F0E00269025 /* RxWebViewController */,
 				6201BAB01D054E3A00EEB665 /* libcrypto.a */,
 				6201BAB11D054E3A00EEB665 /* libssl.a */,
 				6231B1D31D0530BD00C4AEFF /* Alipay */,
@@ -663,6 +705,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6238C5E71D0D3F0E00269025 /* backItemImage_hl@2x.png in Resources */,
 				62B7E6BC1D05164300D3F744 /* AlipaySDK.bundle in Resources */,
 				625524971CF302360069FF89 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				626804DA1C7710A700DAD9DE /* IOSTest.html in Resources */,
@@ -671,6 +714,7 @@
 				624D32381D0725F500BD2F42 /* spec.png in Resources */,
 				625524991CF302360069FF89 /* WeiboSDK.bundle in Resources */,
 				6975C3161BCC9C1300C0D101 /* Assets.xcassets in Resources */,
+				6238C5E61D0D3F0E00269025 /* backItemImage@2x.png in Resources */,
 				6255249B1CF302360069FF89 /* README.txt in Resources */,
 				6255249D1CF302360069FF89 /* ShareSDK.bundle in Resources */,
 				6975C3141BCC9C1300C0D101 /* Main.storyboard in Resources */,
@@ -735,6 +779,7 @@
 				6231B2321D0530BD00C4AEFF /* base64.m in Sources */,
 				6201BAB61D0555B900EEB665 /* Product.m in Sources */,
 				6975C3111BCC9C1300C0D101 /* ViewController.m in Sources */,
+				6238C5E91D0D3F0E00269025 /* NJKWebViewProgressView.m in Sources */,
 				6231B2391D0530BD00C4AEFF /* RSADataVerifier.m in Sources */,
 				62E819EE1CF14CD5001547F4 /* QRCodeReaderView.m in Sources */,
 				62E819EC1CF14CD5001547F4 /* QRCameraSwitchButton.m in Sources */,
@@ -745,6 +790,9 @@
 				626804D61C76C79C00DAD9DE /* JSNativeMethod.m in Sources */,
 				6975C30E1BCC9C1300C0D101 /* AppDelegate.m in Sources */,
 				62E819F01CF14CD5001547F4 /* QRToggleTorchButton.m in Sources */,
+				6238C5E81D0D3F0E00269025 /* NJKWebViewProgress.m in Sources */,
+				6238C5EA1D0D3F0E00269025 /* RxWebViewController.m in Sources */,
+				6238C5EB1D0D3F0E00269025 /* RxWebViewNavigationViewController.m in Sources */,
 				6231B2331D0530BD00C4AEFF /* DataSigner.m in Sources */,
 				6231B2351D0530BD00C4AEFF /* MD5DataSigner.m in Sources */,
 				62E819EF1CF14CD5001547F4 /* QRCodeReaderViewController.m in Sources */,

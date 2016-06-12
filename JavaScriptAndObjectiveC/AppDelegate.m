@@ -34,7 +34,7 @@
 //AdSupport.framework
 
 #import <AlipaySDK/AlipaySDK.h>
-
+#import "RxWebViewNavigationViewController.h"
 
 @interface AppDelegate ()
 @end
