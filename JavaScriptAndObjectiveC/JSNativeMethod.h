@@ -50,9 +50,8 @@
 
 @end
 
-@interface JSNativeMethod : NSObject<TestJSObjectProtocol,QRCodeReaderDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate,CLLocationManagerDelegate,NSURLSessionDelegate>
+@interface JSNativeMethod : NSObject<TestJSObjectProtocol,QRCodeReaderDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate,CLLocationManagerDelegate,NSURLSessionDelegate,UIActionSheetDelegate>
 @property (nonatomic, weak) JSContext *jsContext;
 @property (nonatomic, weak) UIViewController *viewController;
-@property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @property (nonatomic, strong) CLLocationManager *manager;
 @end

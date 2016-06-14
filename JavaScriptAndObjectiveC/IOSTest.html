@@ -38,7 +38,7 @@
       <input type="button" value="Call System Camera" onclick="callSystemCamera()">
         <input type="button" value="Call QR Scan" onclick="callSystemQRScan()">
   
-      <input type="button" value="upload image" onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
+<!--      <input type="button" value="upload image" onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">-->
         <input type="button" value="Show System Location" onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
     <div>
       <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
@@ -56,8 +56,12 @@
 
 <script type="text/javascript">
   var uploadimage = function(argument) {
-log(argument['image'])
+
+
+    
 addElementImg(argument['image']);
+
+ //alert("update image completed.");
 
   }
   
@@ -104,11 +108,13 @@ function showAlertMsg(a,b) {
         window.MobilePhoneCall.showAlertMsg(a,b);
 }
 
+/*
 //app端callback callWithDict()
 function callWithDict(a) {
-<!--      log(JSON.stringify(a));-->
-       window.MobilePhoneCall.callWithDict(a);
+log(JSON.stringify(a));
+window.MobilePhoneCall.callWithDict(a);
 }
+*/
 
 //app端callback jsCallObjcAndObjcCallJsWithDict()
 function jsCallObjcAndObjcCallJsWithDict(a) {

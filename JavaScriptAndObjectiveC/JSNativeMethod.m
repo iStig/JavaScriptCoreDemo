@@ -26,10 +26,6 @@
 
 // JS调用支付
 - (void)jsCallPayment:(NSDictionary *)price {
-//    NSLog(@"PAY %@",price[@"price"]);
-  
-  
- 
     Product *product = [[Product alloc] init];
     product.subject = @"1";
     product.body = @"我是测试数据";
@@ -105,9 +101,6 @@
     [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
 
       dispatch_async(dispatch_get_main_queue(), ^{
-        
-              NSLog(@"WOSHIBAICI = %@",resultDic);
-        
         JSValue *jsFunc = self.jsContext[@"paysuccess"];
         [jsFunc callWithArguments:@[@{@"paysuccess":resultDic}]];
       });
@@ -117,17 +110,16 @@
 }
 
 - (void)shareSDK {
-
   //1、创建分享参数
   NSArray* imageArray = @[@"http://mob.com/Assets/images/logo.png?v=20150320"];
 
   if (imageArray) {
     
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-    [shareParams SSDKSetupShareParamsByText:@"只是我的分享"
+    [shareParams SSDKSetupShareParamsByText:@"bshare分享"
                                      images:imageArray
-                                        url:[NSURL URLWithString:@"https://www.baidu.com/"]
-                                      title:@"我是testjs"
+                                        url:[NSURL URLWithString:@"http://www.bshare.com/"]
+                                      title:@"我是bshare"
                                        type:SSDKContentTypeAuto];
     //2、分享（可以弹出我们的分享菜单和编辑界面）
     [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
@@ -191,7 +183,6 @@
   }
   else {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Reader not supported by the current device" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    
     [alert show];
   }
 }
@@ -215,13 +206,50 @@
 
 #pragma mark 从相册获取图片或视频
 - (void)selectImageFromAlbum {
-  self.imagePickerController = [[UIImagePickerController alloc] init];
-  self.imagePickerController.delegate = self;
-  self.imagePickerController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-  self.imagePickerController.allowsEditing = YES;
-  self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-  [self.viewController presentViewController:self.imagePickerController animated:YES completion:nil];
+  UIActionSheet *actionSheet = nil;
+  if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
+    actionSheet  = [[UIActionSheet alloc] initWithTitle:nil
+                                               delegate:(id<UIActionSheetDelegate>)self
+                                      cancelButtonTitle:@"取消"
+                                 destructiveButtonTitle:nil
+                                      otherButtonTitles:@"从相册选择", @"拍照上传", nil];
+  } else {
+    actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                              delegate:(id<UIActionSheetDelegate>)self
+                                     cancelButtonTitle:@"取消"
+                                destructiveButtonTitle:nil
+                                     otherButtonTitles:@"从相册选择", nil];
+  }
+  
+  [actionSheet showInView:self.viewController.view];
+  
 }
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+  if (buttonIndex == 0) { // 从相册选择
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+      UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+      picker.delegate = self;
+      picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+      picker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:picker.sourceType];
+      
+
+      [self.viewController presentViewController:picker animated:YES completion:nil];
+    }
+  } else if (buttonIndex == 1) { // 拍照
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+      UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+      picker.delegate = self;
+      picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+      picker.delegate = self;
+
+      [self.viewController presentViewController:picker animated:YES completion:nil];
+    }
+  }
+  return;
+}
+
 
 #pragma mark UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -459,6 +487,14 @@
     
     JSValue *jsFunc = self.jsContext[@"uploadimage"];
     [jsFunc callWithArguments:@[@{@"image":imageurl}]];
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                    message:@"图片上传成功。"
+                                                   delegate:self
+                                          cancelButtonTitle:@"确定"
+                                          otherButtonTitles:nil];
+    [alert show];
     
   }];
   
