@@ -19,6 +19,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "Product.h"
 #import "AFNetworking.h"
+#import "OpenShareHeader.h"
 
 //首先创建一个实现了JSExport协议的协议
 @protocol TestJSObjectProtocol <JSExport>

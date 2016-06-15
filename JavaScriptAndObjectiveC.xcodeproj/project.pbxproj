@@ -60,6 +60,13 @@
 		62B7E6CF1D0516B500D3F744 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B7E6CE1D0516B500D3F744 /* CFNetwork.framework */; };
 		62B7E6D11D0516BA00D3F744 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B7E6D01D0516BA00D3F744 /* CoreMotion.framework */; };
 		62B7E6D41D0518F400D3F744 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B7E6D31D0518F400D3F744 /* Order.m */; };
+		62C5CDF51D11277F00D0FAE1 /* OpenShare+Alipay.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C5CDE91D11277F00D0FAE1 /* OpenShare+Alipay.m */; };
+		62C5CDF61D11277F00D0FAE1 /* OpenShare+QQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C5CDEB1D11277F00D0FAE1 /* OpenShare+QQ.m */; };
+		62C5CDF71D11277F00D0FAE1 /* OpenShare+Renren.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C5CDED1D11277F00D0FAE1 /* OpenShare+Renren.m */; };
+		62C5CDF81D11277F00D0FAE1 /* OpenShare+Weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C5CDEF1D11277F00D0FAE1 /* OpenShare+Weibo.m */; };
+		62C5CDF91D11277F00D0FAE1 /* OpenShare+Weixin.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C5CDF11D11277F00D0FAE1 /* OpenShare+Weixin.m */; };
+		62C5CDFA1D11277F00D0FAE1 /* OpenShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C5CDF31D11277F00D0FAE1 /* OpenShare.m */; };
+		62C5CDFC1D11298700D0FAE1 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C5CDFB1D11298700D0FAE1 /* logo.png */; };
 		62E819DF1CEF1143001547F4 /* GpsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E819DE1CEF1143001547F4 /* GpsManager.m */; };
 		62E819EC1CF14CD5001547F4 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E819E21CF14CD5001547F4 /* QRCameraSwitchButton.m */; };
 		62E819ED1CF14CD5001547F4 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E819E41CF14CD5001547F4 /* QRCodeReader.m */; };
@@ -234,6 +241,20 @@
 		62B7E6D01D0516BA00D3F744 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		62B7E6D21D0518F400D3F744 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		62B7E6D31D0518F400D3F744 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		62C5CDE81D11277F00D0FAE1 /* OpenShare+Alipay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenShare+Alipay.h"; sourceTree = "<group>"; };
+		62C5CDE91D11277F00D0FAE1 /* OpenShare+Alipay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OpenShare+Alipay.m"; sourceTree = "<group>"; };
+		62C5CDEA1D11277F00D0FAE1 /* OpenShare+QQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenShare+QQ.h"; sourceTree = "<group>"; };
+		62C5CDEB1D11277F00D0FAE1 /* OpenShare+QQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OpenShare+QQ.m"; sourceTree = "<group>"; };
+		62C5CDEC1D11277F00D0FAE1 /* OpenShare+Renren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenShare+Renren.h"; sourceTree = "<group>"; };
+		62C5CDED1D11277F00D0FAE1 /* OpenShare+Renren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OpenShare+Renren.m"; sourceTree = "<group>"; };
+		62C5CDEE1D11277F00D0FAE1 /* OpenShare+Weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenShare+Weibo.h"; sourceTree = "<group>"; };
+		62C5CDEF1D11277F00D0FAE1 /* OpenShare+Weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OpenShare+Weibo.m"; sourceTree = "<group>"; };
+		62C5CDF01D11277F00D0FAE1 /* OpenShare+Weixin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenShare+Weixin.h"; sourceTree = "<group>"; };
+		62C5CDF11D11277F00D0FAE1 /* OpenShare+Weixin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OpenShare+Weixin.m"; sourceTree = "<group>"; };
+		62C5CDF21D11277F00D0FAE1 /* OpenShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenShare.h; sourceTree = "<group>"; };
+		62C5CDF31D11277F00D0FAE1 /* OpenShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenShare.m; sourceTree = "<group>"; };
+		62C5CDF41D11277F00D0FAE1 /* OpenShareHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenShareHeader.h; sourceTree = "<group>"; };
+		62C5CDFB1D11298700D0FAE1 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		62E819DD1CEF1143001547F4 /* GpsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GpsManager.h; sourceTree = "<group>"; };
 		62E819DE1CEF1143001547F4 /* GpsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GpsManager.m; sourceTree = "<group>"; };
 		62E819E11CF14CD5001547F4 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
@@ -550,6 +571,26 @@
 			path = Required;
 			sourceTree = "<group>";
 		};
+		62C5CDE71D11277F00D0FAE1 /* openshare */ = {
+			isa = PBXGroup;
+			children = (
+				62C5CDE81D11277F00D0FAE1 /* OpenShare+Alipay.h */,
+				62C5CDE91D11277F00D0FAE1 /* OpenShare+Alipay.m */,
+				62C5CDEA1D11277F00D0FAE1 /* OpenShare+QQ.h */,
+				62C5CDEB1D11277F00D0FAE1 /* OpenShare+QQ.m */,
+				62C5CDEC1D11277F00D0FAE1 /* OpenShare+Renren.h */,
+				62C5CDED1D11277F00D0FAE1 /* OpenShare+Renren.m */,
+				62C5CDEE1D11277F00D0FAE1 /* OpenShare+Weibo.h */,
+				62C5CDEF1D11277F00D0FAE1 /* OpenShare+Weibo.m */,
+				62C5CDF01D11277F00D0FAE1 /* OpenShare+Weixin.h */,
+				62C5CDF11D11277F00D0FAE1 /* OpenShare+Weixin.m */,
+				62C5CDF21D11277F00D0FAE1 /* OpenShare.h */,
+				62C5CDF31D11277F00D0FAE1 /* OpenShare.m */,
+				62C5CDF41D11277F00D0FAE1 /* OpenShareHeader.h */,
+			);
+			path = openshare;
+			sourceTree = "<group>";
+		};
 		62E819E01CF14CD5001547F4 /* QRCodeReaderViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -604,6 +645,7 @@
 		6975C3081BCC9C1300C0D101 /* JavaScriptAndObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
+				62C5CDE71D11277F00D0FAE1 /* openshare */,
 				626804D91C7710A700DAD9DE /* IOSTest.html */,
 				6975C30C1BCC9C1300C0D101 /* AppDelegate.h */,
 				6975C30D1BCC9C1300C0D101 /* AppDelegate.m */,
@@ -612,6 +654,7 @@
 				626804D41C76C79C00DAD9DE /* JSNativeMethod.h */,
 				626804D51C76C79C00DAD9DE /* JSNativeMethod.m */,
 				624D32371D0725F500BD2F42 /* spec.png */,
+				62C5CDFB1D11298700D0FAE1 /* logo.png */,
 				6201BAB41D0555B900EEB665 /* Product.h */,
 				6201BAB51D0555B900EEB665 /* Product.m */,
 				62E819DD1CEF1143001547F4 /* GpsManager.h */,
@@ -709,6 +752,7 @@
 				62B7E6BC1D05164300D3F744 /* AlipaySDK.bundle in Resources */,
 				625524971CF302360069FF89 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				626804DA1C7710A700DAD9DE /* IOSTest.html in Resources */,
+				62C5CDFC1D11298700D0FAE1 /* logo.png in Resources */,
 				6975C3191BCC9C1300C0D101 /* LaunchScreen.storyboard in Resources */,
 				625524941CF302360069FF89 /* ShareSDKUI.bundle in Resources */,
 				624D32381D0725F500BD2F42 /* spec.png in Resources */,
@@ -781,6 +825,7 @@
 				6975C3111BCC9C1300C0D101 /* ViewController.m in Sources */,
 				6238C5E91D0D3F0E00269025 /* NJKWebViewProgressView.m in Sources */,
 				6231B2391D0530BD00C4AEFF /* RSADataVerifier.m in Sources */,
+				62C5CDF71D11277F00D0FAE1 /* OpenShare+Renren.m in Sources */,
 				62E819EE1CF14CD5001547F4 /* QRCodeReaderView.m in Sources */,
 				62E819EC1CF14CD5001547F4 /* QRCameraSwitchButton.m in Sources */,
 				62E819ED1CF14CD5001547F4 /* QRCodeReader.m in Sources */,
@@ -788,6 +833,7 @@
 				6231B2381D0530BD00C4AEFF /* RSADataSigner.m in Sources */,
 				62E819DF1CEF1143001547F4 /* GpsManager.m in Sources */,
 				626804D61C76C79C00DAD9DE /* JSNativeMethod.m in Sources */,
+				62C5CDFA1D11277F00D0FAE1 /* OpenShare.m in Sources */,
 				6975C30E1BCC9C1300C0D101 /* AppDelegate.m in Sources */,
 				62E819F01CF14CD5001547F4 /* QRToggleTorchButton.m in Sources */,
 				6238C5E81D0D3F0E00269025 /* NJKWebViewProgress.m in Sources */,
@@ -797,9 +843,13 @@
 				6231B2351D0530BD00C4AEFF /* MD5DataSigner.m in Sources */,
 				62E819EF1CF14CD5001547F4 /* QRCodeReaderViewController.m in Sources */,
 				62B7E6D41D0518F400D3F744 /* Order.m in Sources */,
+				62C5CDF81D11277F00D0FAE1 /* OpenShare+Weibo.m in Sources */,
+				62C5CDF61D11277F00D0FAE1 /* OpenShare+QQ.m in Sources */,
 				6231B2361D0530BD00C4AEFF /* NSDataEx.m in Sources */,
+				62C5CDF51D11277F00D0FAE1 /* OpenShare+Alipay.m in Sources */,
 				6975C30B1BCC9C1300C0D101 /* main.m in Sources */,
 				6231B2341D0530BD00C4AEFF /* DataVerifier.m in Sources */,
+				62C5CDF91D11277F00D0FAE1 /* OpenShare+Weixin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
