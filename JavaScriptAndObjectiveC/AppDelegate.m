@@ -97,7 +97,7 @@
 //        }];
   
   
-  [OpenShare connectQQWithAppId:@"1103194207"];
+  [OpenShare connectQQWithAppId:@"100371282"];
   [OpenShare connectWeixinWithAppId:@"wx57c7b928e9b013ba"];
 
   

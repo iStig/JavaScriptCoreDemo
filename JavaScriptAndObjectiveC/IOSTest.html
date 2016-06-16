@@ -34,11 +34,15 @@
 <body>
   <h1>JS Call</h1>
    <input type="button" value="pay" onclick="jsCallPayment({'price':'0.02'})">
-   <input type="button" value="share" onclick="shareSDK()">
+   <input type="button" value="Wechat Timeline" onclick="shareSDK({'ios':'0'})">
+    <input type="button" value="Wechat Session" onclick="shareSDK({'ios':'1'})">
+    <input type="button" value="QQ Friend" onclick="shareSDK({'ios':'2'})">
+    <input type="button" value="QQ Zone" onclick="shareSDK({'ios':'3'})">
+    <input type="button" value="Tencent Weibo" onclick="shareSDK({'ios':'4'})">
       <input type="button" value="Call System Camera" onclick="callSystemCamera()">
         <input type="button" value="Call QR Scan" onclick="callSystemQRScan()">
   
-<!--      <input type="button" value="upload image" onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">-->
+     <input type="button" value="upload image" onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
         <input type="button" value="Show System Location" onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
     <div>
       <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
@@ -80,9 +84,9 @@ var paysuccess = function(argument) {
   log(argument['longitude']);
 }
 
-function shareSDK() {
+function shareSDK(argument) {
   log("share");
-  window.MobilePhoneCall.shareSDK();
+  window.MobilePhoneCall.shareSDK(argument);
 }
 
 //app端callback callSystemQRScan()
@@ -108,13 +112,13 @@ function showAlertMsg(a,b) {
         window.MobilePhoneCall.showAlertMsg(a,b);
 }
 
-/*
+
 //app端callback callWithDict()
 function callWithDict(a) {
 log(JSON.stringify(a));
 window.MobilePhoneCall.callWithDict(a);
 }
-*/
+
 
 //app端callback jsCallObjcAndObjcCallJsWithDict()
 function jsCallObjcAndObjcCallJsWithDict(a) {

@@ -20,6 +20,7 @@
 #import "Product.h"
 #import "AFNetworking.h"
 #import "OpenShareHeader.h"
+#import <Social/Social.h>
 
 //首先创建一个实现了JSExport协议的协议
 @protocol TestJSObjectProtocol <JSExport>
@@ -31,7 +32,7 @@
 - (void)callWithDict:(NSDictionary *)params;
 
 // 第三方分享
-- (void)shareSDK;
+- (void)shareSDK:(NSDictionary *)params;
 
 // JS调用此方法来调用OC的系统相册方法
 - (void)callSystemCamera;

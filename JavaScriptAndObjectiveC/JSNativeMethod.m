@@ -9,6 +9,8 @@
   return @"iOS To H5";
 }
 - (void)callWithDict:(NSDictionary *)params {
+  
+  NSLog(@"%@",params);
   JSValue *jsFunc = self.jsContext[@"uploadimage"];
   [jsFunc callWithArguments:@[@{@"image":@"image upload success"}]];
 }
@@ -109,7 +111,7 @@
   
 }
 
-- (void)shareSDK {
+- (void)shareSDK:(NSDictionary *)params{
 //  //1、创建分享参数
 //  NSArray* imageArray = @[@"http://mob.com/Assets/images/logo.png?v=20150320"];
 //
@@ -153,8 +155,10 @@
 //                 }
 //               }
 //     ];}
+  NSLog(@"%@",params);
   
   
+  NSInteger index =  [params[@"ios"] integerValue];
   
   OSMessage *msg=[[OSMessage alloc]init];
   msg.title=@"hello  testJs";
@@ -162,30 +166,76 @@
   msg.link=@"http://www.bshare.com/";
   msg.image=[UIImage imageNamed:@"logo"];//新闻类型的职能传缩略图就够了。
   
-  [OpenShare shareToWeixinSession:msg Success:^(OSMessage *message) {
-    NSLog(@"微信分享到会话成功：\n%@",message);
-  } Fail:^(OSMessage *message, NSError *error) {
-    NSLog(@"微信分享到会话失败：\n%@\n%@",error,message);
-  }];
+  if (index == 0) {//好友
+    [OpenShare shareToWeixinSession:msg Success:^(OSMessage *message) {
+      NSLog(@"微信分享到会话成功：\n%@",message);
+    } Fail:^(OSMessage *message, NSError *error) {
+      NSLog(@"微信分享到会话失败：\n%@\n%@",error,message);
+    }];
+  }
+  if (index == 1) {//朋友圈
+      [OpenShare shareToWeixinTimeline:msg Success:^(OSMessage *message) {
+        NSLog(@"微信分享到朋友圈成功：\n%@",message);
+      } Fail:^(OSMessage *message, NSError *error) {
+        NSLog(@"微信分享到朋友圈失败：\n%@\n%@",error,message);
+      }];
+  }
   
-  [OpenShare shareToWeixinTimeline:msg Success:^(OSMessage *message) {
-    NSLog(@"微信分享到朋友圈成功：\n%@",message);
-  } Fail:^(OSMessage *message, NSError *error) {
-    NSLog(@"微信分享到朋友圈失败：\n%@\n%@",error,message);
-  }];
+  if (index == 2) {//好友
+    
+        NSLog(@"%ld",(long)index);
+    [OpenShare shareToQQFriends:msg Success:^(OSMessage *message) {
+      NSLog(@"分享到QQ好友成功:%@",msg);
+    } Fail:^(OSMessage *message, NSError *error) {
+      NSLog(@"分享到QQ好友失败:%@\n%@",msg,error);
+    }];
+  }
   
+  if (index == 3) {//好友
+    NSLog(@"%ld",(long)index);
+    [OpenShare shareToQQZone:msg Success:^(OSMessage *message) {
+      NSLog(@"分享到QQ空间成功:%@",msg);
+    } Fail:^(OSMessage *message, NSError *error) {
+      NSLog(@"分享到QQ空间失败:%@\n%@",msg,error);
+    }];
+    
+
+  }
+  if (index == 4) {//好友
+
+    // 首先判断新浪分享是否可用
+    if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTencentWeibo]) {
+      NSLog(@"tencent weibo  share fail");
+      return;
+    }
+    // 创建控制器，并设置ServiceType
+    SLComposeViewController *composeVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTencentWeibo];
+    // 添加要分享的图片
+    [composeVC addImage:msg.image];
+    // 添加要分享的文字
+    [composeVC setInitialText:msg.title];
+    // 添加要分享的url
+    [composeVC addURL:[NSURL URLWithString:msg.link]];
+    // 弹出分享控制器
+    [self.viewController presentViewController:composeVC animated:YES completion:nil];
+    // 监听用户点击事件
+    composeVC.completionHandler = ^(SLComposeViewControllerResult result){
+      if (result == SLComposeViewControllerResultDone) {
+        NSLog(@"点击了发送");
+      }
+      else if (result == SLComposeViewControllerResultCancelled)
+      {
+        NSLog(@"点击了取消");
+      }
+    };
+    
+  }
   
-  [OpenShare shareToQQFriends:msg Success:^(OSMessage *message) {
-    NSLog(@"分享到QQ好友成功:%@",msg);
-  } Fail:^(OSMessage *message, NSError *error) {
-    NSLog(@"分享到QQ好友失败:%@\n%@",msg,error);
-  }];
+
+
   
-  [OpenShare shareToQQZone:msg Success:^(OSMessage *message) {
-    NSLog(@"分享到QQ空间成功:%@",msg);
-  } Fail:^(OSMessage *message, NSError *error) {
-    NSLog(@"分享到QQ空间失败:%@\n%@",msg,error);
-  }];
+
+
   
 }
 
