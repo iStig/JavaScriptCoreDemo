@@ -12,8 +12,7 @@
 #import "QRCodeReaderViewController.h"
 #import "QRCodeReader.h"
 
-#import <ShareSDK/ShareSDK.h>
-#import <ShareSDKUI/ShareSDK+SSUI.h>
+
 #import "Order.h"
 #import "DataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
