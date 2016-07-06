@@ -59,6 +59,8 @@
 </html>
 
 <script type="text/javascript">
+  
+  
   var uploadimage = function(argument) {
 
 
@@ -125,6 +127,11 @@ function jsCallObjcAndObjcCallJsWithDict(a) {
 <!--         log(JSON.stringify(a));-->
         window.MobilePhoneCall.jsCallObjcAndObjcCallJsWithDict(a);
 }
+
+
+
+window.setTimeout(jsCallObjcAndObjcCallJsWithDict, 1000);
+
 
 function jsCallPayment(a) {
   log(JSON.stringify(a));
