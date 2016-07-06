@@ -23,7 +23,9 @@
   [self selectImageFromAlbum];
 }
 - (void)jsCallObjcAndObjcCallJsWithDict:(NSDictionary *)params {
+  
   [self fetchLocation];
+  NSLog(@"调用location");
 }
 
 // JS调用支付
