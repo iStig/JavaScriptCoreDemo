@@ -120,13 +120,18 @@
   
   NSInteger index =  [params[@"ios"] integerValue];
   
-  OSMessage *msg=[[OSMessage alloc]init];
-  msg.title=@"hello  testJs";
-  //link
-  msg.link=@"http://www.bshare.com/";
-  msg.image=[UIImage imageNamed:@"logo"];//新闻类型的职能传缩略图就够了。
+ 
   
   if (index == 0) {//好友
+    
+    OSMessage *msg=[[OSMessage alloc]init];
+    msg.title=@"hello  testJs";
+    //link
+    msg.link=@"http://www.bshare.com/";
+    msg.image=[UIImage imageNamed:@"logo"];//新闻类型的职能传缩略图就够了。
+    
+    
+    NSLog(@"%@__%@",msg,msg.title);
     [OpenShare shareToWeixinSession:msg Success:^(OSMessage *message) {
       NSLog(@"微信分享到会话成功：\n%@",message);
     } Fail:^(OSMessage *message, NSError *error) {
@@ -134,6 +139,12 @@
     }];
   }
   if (index == 1) {//朋友圈
+    
+    OSMessage *msg=[[OSMessage alloc]init];
+    msg.title=@"hello  testJs";
+    //link
+    msg.link=@"http://www.bshare.com/";
+    msg.image=[UIImage imageNamed:@"logo"];//新闻类型的职能传缩略图就够了。
       [OpenShare shareToWeixinTimeline:msg Success:^(OSMessage *message) {
         NSLog(@"微信分享到朋友圈成功：\n%@",message);
       } Fail:^(OSMessage *message, NSError *error) {
@@ -142,6 +153,12 @@
   }
   
   if (index == 2) {//好友
+    
+    OSMessage *msg=[[OSMessage alloc]init];
+    msg.title=@"hello  testJs";
+    //link
+//    msg.link=@"http://www.bshare.com/";
+//    msg.image=[UIImage imageNamed:@"logo"];//新闻类型的职能传缩略图就够了。
     
         NSLog(@"%ld",(long)index);
     [OpenShare shareToQQFriends:msg Success:^(OSMessage *message) {
@@ -152,6 +169,12 @@
   }
   
   if (index == 3) {//好友
+    
+    OSMessage *msg=[[OSMessage alloc]init];
+    msg.title=@"hello  testJs";
+    //link
+//    msg.link=@"http://www.bshare.com/";
+//    msg.image=[UIImage imageNamed:@"logo"];//新闻类型的职能传缩略图就够了。
     NSLog(@"%ld",(long)index);
     [OpenShare shareToQQZone:msg Success:^(OSMessage *message) {
       NSLog(@"分享到QQ空间成功:%@",msg);
@@ -162,6 +185,12 @@
 
   }
   if (index == 4) {//好友
+    
+    OSMessage *msg=[[OSMessage alloc]init];
+    msg.title=@"hello  testJs";
+    //link
+    msg.link=@"http://www.bshare.com/";
+    msg.image=[UIImage imageNamed:@"logo"];//新闻类型的职能传缩略图就够了。
 
     // 首先判断新浪分享是否可用
     if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTencentWeibo]) {

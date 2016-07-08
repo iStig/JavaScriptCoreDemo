@@ -2,4 +2,70 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JavaScriptAndObjectiveC/JSNativeMethod.m"
+            timestampString = "489651970.326689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "-shareSDK:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JavaScriptAndObjectiveC/JSNativeMethod.m"
+            timestampString = "489651970.326689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "-shareSDK:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JSNativeMethod shareSDK:]"
+                  moduleName = "JavaScriptAndObjectiveC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/istig/Documents/my%20files/GitHub/iOS%E5%92%8CJS%E8%B0%83%E7%94%A8/ios%20js%E4%BA%A4%E4%BA%92/IOSCallJsOrJsCallIOS-master/JavaScriptAndObjectiveC/JavaScriptAndObjectiveC/JSNativeMethod.m"
+                  timestampString = "489651856.506744"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "844">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__27-[JSNativeMethod shareSDK:]_block_invoke.184"
+                  moduleName = "JavaScriptAndObjectiveC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/istig/Documents/my%20files/GitHub/iOS%E5%92%8CJS%E8%B0%83%E7%94%A8/ios%20js%E4%BA%A4%E4%BA%92/IOSCallJsOrJsCallIOS-master/JavaScriptAndObjectiveC/JavaScriptAndObjectiveC/JSNativeMethod.m"
+                  timestampString = "489651856.506879"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

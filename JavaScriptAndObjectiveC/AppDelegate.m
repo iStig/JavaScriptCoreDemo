@@ -12,7 +12,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [OpenShare connectQQWithAppId:@"100371282"];
+  [OpenShare connectQQWithAppId:@"1105526578"];
   [OpenShare connectWeixinWithAppId:@"wx57c7b928e9b013ba"];
   return YES;
 }
