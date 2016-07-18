@@ -26,15 +26,15 @@
 				<string>alisdkdemo</string>
 				<string>com.mob.demoShareSDK</string>
 				<string>QQ05FB8B52</string>
-				<string>tencent1105526578</string>
-				<string>tencent1105526578.content</string>
+				<string>tencent1105488636</string>
+				<string>tencent1105488636.content</string>
 				<string>wx57c7b928e9b013ba</string>
 				<string>wb568898243</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.9</string>
+	<string>2.0</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>weibosdk</string>
