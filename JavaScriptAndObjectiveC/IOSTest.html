@@ -39,11 +39,12 @@
     <input type="button" value="QQ Friend" onclick="shareSDK({'ios':'2'})">
     <input type="button" value="QQ Zone" onclick="shareSDK({'ios':'3'})">
     <input type="button" value="Tencent Weibo" onclick="shareSDK({'ios':'4'})">
-      <input type="button" value="Call System Camera" onclick="callSystemCamera()">
-        <input type="button" value="Call QR Scan" onclick="callSystemQRScan()">
-  
-     <input type="button" value="upload image" onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
-        <input type="button" value="Show System Location" onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
+    <input type="button" value="Call System Camera" onclick="callSystemCamera()">
+    <input type="button" value="Call QR Scan" onclick="callSystemQRScan()">
+    <input type="button" value="upload image" onclick="callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
+    <input type="button" value="Show System Location" onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
+        <input type="button" value="buji testshare" onclick="bujiShareSDK({'type':'1','image':'','title':'','url':''})">
+        
     <div>
       <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
     </div>
@@ -89,6 +90,11 @@ var paysuccess = function(argument) {
 function shareSDK(argument) {
   log("share");
   window.MobilePhoneCall.shareSDK(argument);
+}
+
+function bujiShareSDK(argument) {
+    log("bujiShareSDK");
+    window.MobilePhoneCall.bujiShareSDK(argument);
 }
 
 //app端callback callSystemQRScan()

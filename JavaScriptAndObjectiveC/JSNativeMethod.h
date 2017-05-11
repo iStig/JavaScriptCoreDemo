@@ -33,6 +33,10 @@
 // 第三方分享
 - (void)shareSDK:(NSDictionary *)params;
 
+// 不急测试第三方分享
+- (void)bujiShareSDK:(NSDictionary *)params;
+
+
 // JS调用此方法来调用OC的系统相册方法
 - (void)callSystemCamera;
 
