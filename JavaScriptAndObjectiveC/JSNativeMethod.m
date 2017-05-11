@@ -242,10 +242,12 @@
         if (index == 0) {//wx朋友圈
             
             OSMessage *msg=[[OSMessage alloc]init];
-            msg.title=@"hello  testJs";
+            msg.title=title;
             //link
-            msg.link=@"http://www.bshare.com/";
-            msg.image=[UIImage imageNamed:@"logo"];//新闻类型的职能传缩略图就够了。
+            msg.link=link;
+            msg.image=image;//新闻类型的职能传缩略图就够了。
+            msg.desc = title;
+            
             [OpenShare shareToWeixinTimeline:msg Success:^(OSMessage *message) {
                 NSLog(@"微信分享到朋友圈成功：\n%@",message);
             } Fail:^(OSMessage *message, NSError *error) {
@@ -259,7 +261,7 @@
             //link
             msg.link=link;
             msg.image=image;//新闻类型的职能传缩略图就够了。
-            
+             msg.desc = title;
             
             NSLog(@"%@__%@",msg,msg.title);
             [OpenShare shareToWeixinSession:msg Success:^(OSMessage *message) {
@@ -274,10 +276,11 @@
         if (index == 2) {//qq好友
             
             OSMessage *msg=[[OSMessage alloc]init];
-            msg.title=@"hello  testJs";
+            msg.title=title;
             //link
-            msg.link=@"http://www.bshare.com/";
-            msg.image=[UIImage imageNamed:@"logo"];//新闻类型的职能传缩略图就够了。
+            msg.link=link;
+            msg.image=image;//新闻类型的职能传缩略图就够了。
+             msg.desc = title;
             
             NSLog(@"%ld",(long)index);
             [OpenShare shareToQQFriends:msg Success:^(OSMessage *message) {
@@ -290,10 +293,13 @@
         if (index == 3) {//qq空间
             
             OSMessage *msg=[[OSMessage alloc]init];
-            msg.title=@"hello  testJs";
+
+            msg.title=title;
             //link
-            msg.link=@"http://www.bshare.com/";
-            msg.image=[UIImage imageNamed:@"logo"];//新闻类型的职能传缩略图就够了。
+            msg.link=link;
+            msg.image=image;//新闻类型的职能传缩略图就够了。
+             msg.desc = title;
+            
             NSLog(@"%ld",(long)index);
             [OpenShare shareToQQZone:msg Success:^(OSMessage *message) {
                 NSLog(@"分享到QQ空间成功:%@",msg);
