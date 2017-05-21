@@ -14,14 +14,83 @@
 @end
 
 @implementation ViewController
+- (void)login:(UIButton *)sender {
+    NSInteger index = sender.tag;
+    
+    if (index == 1) {//weixin
+        //        __block NSString *code = nil;
+        //        [OpenShare WeixinAuth:@"snsapi_userinfo" Success:^(NSDictionary *message) {
+        //            if (message) {
+        //                code = message[@"code"];
+        //            }
+        //        } Fail:^(NSDictionary *message, NSError *error) {
+        //            nil;
+        //        }];
+        
+        //login scope: @"snsapi_message,snsapi_userinfo,snsapi_friend,snsapi_contact";//,post_timeline,sns
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [OpenShare WeixinAuth:@"snsapi_userinfo" Success:^(NSDictionary *message) {
+                NSLog(@"微信登录成功:\n%@",message);
+            } Fail:^(NSDictionary *message, NSError *error) {
+                NSLog(@"微信登录失败:\n%@\n%@",message,error);
+            }];
+        });
+        
+        
+        
+    }else if (index == 2){//qq
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [OpenShare QQAuth:@"get_user_info" Success:^(NSDictionary *message) {
+                NSLog(@"QQ登录成功\n%@",message);
+            } Fail:^(NSDictionary *message, NSError *error) {
+                NSLog(@"QQ登录失败\n%@\n%@",error,message);
+            }];
+        });
+        
+    }
+
+    
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+    
+    
+    
+    
+    
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button.frame = CGRectMake(100, 50, 200, 80);
+//    [button setTitle:@"weixin" forState:UIControlStateNormal];
+//    button.backgroundColor = [UIColor redColor];
+//    button.tag = 1;
+//    [button addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:button];
+//    
+//    
+//    
+//    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button2.frame = CGRectMake(100, 150, 200, 80);
+//    [button2 setTitle:@"qq" forState:UIControlStateNormal];
+//     button2.backgroundColor = [UIColor greenColor];
+//    button2.tag = 2;
+//    [button2 addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:button2];
+    
+
+
+
+    
+    
   [self.view addSubview:self.webView];
   
   // 一个JSContext对象，就类似于JS中的Window，只需要创建一次即可
   self.jsContext = [[JSContext alloc] init];
 }
+
 
 - (UIWebView *)webView {
   if (_webView == nil) {

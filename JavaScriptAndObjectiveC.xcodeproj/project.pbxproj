@@ -71,8 +71,8 @@
 
 /* Begin PBXFileReference section */
 		33BE8497E3D82B17D9C107F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6201BAB01D054E3A00EEB665 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
-		6201BAB11D054E3A00EEB665 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		6201BAB01D054E3A00EEB665 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../libcrypto.a; sourceTree = "<group>"; };
+		6201BAB11D054E3A00EEB665 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../libssl.a; sourceTree = "<group>"; };
 		6201BAB41D0555B900EEB665 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		6201BAB51D0555B900EEB665 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		6231B1D51D0530BD00C4AEFF /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 		626804D41C76C79C00DAD9DE /* JSNativeMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSNativeMethod.h; sourceTree = "<group>"; };
 		626804D51C76C79C00DAD9DE /* JSNativeMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSNativeMethod.m; sourceTree = "<group>"; };
 		626804D91C7710A700DAD9DE /* IOSTest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = IOSTest.html; sourceTree = "<group>"; };
-		62B7E6BA1D05164300D3F744 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		62B7E6BB1D05164300D3F744 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		62B7E6BA1D05164300D3F744 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AlipaySDK.bundle; path = ../AlipaySDK.bundle; sourceTree = "<group>"; };
+		62B7E6BB1D05164300D3F744 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = ../AlipaySDK.framework; sourceTree = "<group>"; };
 		62B7E6BE1D05166F00D3F744 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		62B7E6C01D05167C00D3F744 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		62B7E6C21D05168B00D3F744 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -299,7 +299,8 @@
 				6231B1D41D0530BD00C4AEFF /* openssl */,
 				6231B2201D0530BD00C4AEFF /* Util */,
 			);
-			path = Alipay;
+			name = Alipay;
+			path = ../Alipay;
 			sourceTree = "<group>";
 		};
 		6231B1D41D0530BD00C4AEFF /* openssl */ = {
@@ -419,7 +420,8 @@
 				6238C5E41D0D3F0E00269025 /* RxWebViewNavigationViewController.h */,
 				6238C5E51D0D3F0E00269025 /* RxWebViewNavigationViewController.m */,
 			);
-			path = RxWebViewController;
+			name = RxWebViewController;
+			path = ../RxWebViewController;
 			sourceTree = "<group>";
 		};
 		6238C5DD1D0D3F0E00269025 /* NJKWebViewProgress */ = {
@@ -468,26 +470,13 @@
 				62E819EA1CF14CD5001547F4 /* QRToggleTorchButton.h */,
 				62E819EB1CF14CD5001547F4 /* QRToggleTorchButton.m */,
 			);
-			path = QRCodeReaderViewController;
+			name = QRCodeReaderViewController;
+			path = ../QRCodeReaderViewController;
 			sourceTree = "<group>";
 		};
 		6975C2FD1BCC9C1300C0D101 = {
 			isa = PBXGroup;
 			children = (
-				6238C5DA1D0D3F0E00269025 /* RxWebViewController */,
-				6201BAB01D054E3A00EEB665 /* libcrypto.a */,
-				6201BAB11D054E3A00EEB665 /* libssl.a */,
-				6231B1D31D0530BD00C4AEFF /* Alipay */,
-				62B7E6BA1D05164300D3F744 /* AlipaySDK.bundle */,
-				62B7E6BB1D05164300D3F744 /* AlipaySDK.framework */,
-				6975C3201BCC9D6A00C0D101 /* JavaScriptCore.framework */,
-				625524A91CF302F60069FF89 /* AdSupport.framework */,
-				625524A71CF302F00069FF89 /* libsqlite3.tbd */,
-				625524A51CF302E60069FF89 /* ImageIO.framework */,
-				625524A31CF302D90069FF89 /* libstdc++.tbd */,
-				625524A11CF302CD0069FF89 /* libz.tbd */,
-				6255249F1CF302C20069FF89 /* libicucore.tbd */,
-				62E819E01CF14CD5001547F4 /* QRCodeReaderViewController */,
 				6975C3081BCC9C1300C0D101 /* JavaScriptAndObjectiveC */,
 				6975C3071BCC9C1300C0D101 /* Products */,
 				78C4AEE6D78BDA32AD2E8D86 /* Pods */,
@@ -506,6 +495,8 @@
 		6975C3081BCC9C1300C0D101 /* JavaScriptAndObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
+				62E819E01CF14CD5001547F4 /* QRCodeReaderViewController */,
+				6238C5DA1D0D3F0E00269025 /* RxWebViewController */,
 				62C5CDE71D11277F00D0FAE1 /* openshare */,
 				626804D91C7710A700DAD9DE /* IOSTest.html */,
 				6975C30C1BCC9C1300C0D101 /* AppDelegate.h */,
@@ -522,9 +513,7 @@
 				62E819DE1CEF1143001547F4 /* GpsManager.m */,
 				62B7E6D21D0518F400D3F744 /* Order.h */,
 				62B7E6D31D0518F400D3F744 /* Order.m */,
-				6975C3121BCC9C1300C0D101 /* Main.storyboard */,
 				6975C3151BCC9C1300C0D101 /* Assets.xcassets */,
-				6975C3171BCC9C1300C0D101 /* LaunchScreen.storyboard */,
 				6975C31A1BCC9C1300C0D101 /* Info.plist */,
 				6975C3091BCC9C1300C0D101 /* Supporting Files */,
 			);
@@ -534,6 +523,20 @@
 		6975C3091BCC9C1300C0D101 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6975C3121BCC9C1300C0D101 /* Main.storyboard */,
+				6975C3171BCC9C1300C0D101 /* LaunchScreen.storyboard */,
+				6201BAB01D054E3A00EEB665 /* libcrypto.a */,
+				6201BAB11D054E3A00EEB665 /* libssl.a */,
+				6231B1D31D0530BD00C4AEFF /* Alipay */,
+				62B7E6BA1D05164300D3F744 /* AlipaySDK.bundle */,
+				62B7E6BB1D05164300D3F744 /* AlipaySDK.framework */,
+				6975C3201BCC9D6A00C0D101 /* JavaScriptCore.framework */,
+				625524A91CF302F60069FF89 /* AdSupport.framework */,
+				625524A71CF302F00069FF89 /* libsqlite3.tbd */,
+				625524A51CF302E60069FF89 /* ImageIO.framework */,
+				625524A31CF302D90069FF89 /* libstdc++.tbd */,
+				625524A11CF302CD0069FF89 /* libz.tbd */,
+				6255249F1CF302C20069FF89 /* libicucore.tbd */,
 				6975C30A1BCC9C1300C0D101 /* main.m */,
 			);
 			name = "Supporting Files";

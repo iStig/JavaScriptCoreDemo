@@ -114,6 +114,51 @@
   
 }
 
+
+
+- (void)thirdLogin:(NSDictionary *)params{
+
+    NSLog(@"%@",params);
+    
+    NSInteger index =  [params[@"tag"] integerValue];
+    
+    if (index == 0) {//weixin
+//        __block NSString *code = nil;
+//        [OpenShare WeixinAuth:@"snsapi_userinfo" Success:^(NSDictionary *message) {
+//            if (message) {
+//                code = message[@"code"];
+//            }
+//        } Fail:^(NSDictionary *message, NSError *error) {
+//            nil;
+//        }];
+        
+        //login scope: @"snsapi_message,snsapi_userinfo,snsapi_friend,snsapi_contact";//,post_timeline,sns
+     
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [OpenShare WeixinAuth:@"snsapi_userinfo" Success:^(NSDictionary *message) {
+                NSLog(@"微信登录成功:\n%@",message);
+            } Fail:^(NSDictionary *message, NSError *error) {
+                NSLog(@"微信登录失败:\n%@\n%@",message,error);
+            }];
+        });
+        
+
+        
+    }else if (index == 1){//qq
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [OpenShare QQAuth:@"get_user_info" Success:^(NSDictionary *message) {
+                NSLog(@"QQ登录成功\n%@",message);
+            } Fail:^(NSDictionary *message, NSError *error) {
+                NSLog(@"QQ登录失败\n%@\n%@",error,message);
+            }];
+        });
+  
+    }
+}
+
+
 - (void)shareSDK:(NSDictionary *)params{
 
   NSLog(@"%@",params);
@@ -171,6 +216,7 @@
   
   if (index == 3) {//好友
     
+      
     OSMessage *msg=[[OSMessage alloc]init];
     msg.title=@"hello  testJs";
     //link

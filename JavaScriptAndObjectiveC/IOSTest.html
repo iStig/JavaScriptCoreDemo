@@ -45,8 +45,10 @@
     <input type="button" value="Show System Location" onclick="jsCallObjcAndObjcCallJsWithDict({'name': 'testname1', 'age': 101, 'height': 180})">
     <input type="button" value="buji testshare wxpyq" onclick="bujiShareSDK({'type':'0','image':'','title':'','url':''})">
     <input type="button" value="buji testshare wxhy" onclick="bujiShareSDK({'type':'1','image':'','title':'','url':''})">
-        <input type="button" value="buji testshare qqhy" onclick="bujiShareSDK({'type':'2','image':'','title':'','url':''})">
+    <input type="button" value="buji testshare qqhy" onclick="bujiShareSDK({'type':'2','image':'','title':'','url':''})">
     <input type="button" value="buji testshare qqzone" onclick="bujiShareSDK({'type':'3','image':'','title':'','url':''})">
+    <input type="button" value="wxlogin" onclick="thirdLogin({'tag':'0'})">
+    <input type="button" value="qqlogin" onclick="thirdLogin({'tag':'1'})">
         
     <div>
       <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
@@ -93,6 +95,11 @@ var paysuccess = function(argument) {
 function shareSDK(argument) {
   log("share");
   window.MobilePhoneCall.shareSDK(argument);
+}
+
+function thirdLogin(argument) {
+    log("thirdLogin");
+    window.MobilePhoneCall.thirdLogin(argument);
 }
 
 function bujiShareSDK(argument) {

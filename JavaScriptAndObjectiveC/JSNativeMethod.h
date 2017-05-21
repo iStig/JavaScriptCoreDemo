@@ -33,6 +33,10 @@
 // 第三方分享
 - (void)shareSDK:(NSDictionary *)params;
 
+// 第三方登录
+- (void)thirdLogin:(NSDictionary *)params;
+
+
 // 不急测试第三方分享
 - (void)bujiShareSDK:(NSDictionary *)params;
 
