@@ -24,6 +24,12 @@
 //首先创建一个实现了JSExport协议的协议
 @protocol TestJSObjectProtocol <JSExport>
 
+- (NSString *)fetchLocalStorageWithKey:(NSDictionary *)keyDic;
+
+- (void)setuplocalstoragekey:(NSDictionary *)keyDic value:(NSDictionary *)valueDic;
+
+- (void)removeLocalStorageWithKey:(NSDictionary *)keyDic;
+
 //此处我们测试几种参数的情况
 - (NSString *)imgCallBack:(NSString *)url;
 
@@ -56,6 +62,8 @@
 // 在JS中调用时，函数名应该为showAlertMsg(arg1, arg2)
 // 这里是只两个参数的。
 - (void)showAlert:(NSString *)title msg:(NSString *)msg;
+
+
 
 @end
 

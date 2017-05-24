@@ -23,7 +23,9 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>QQ41e46afc</string>
 				<string>QQ41C1685F</string>
+				<string>QQ41ddd841</string>
 				<string>wxe3ede52918691e61</string>
 				<string>wxd930ea5d5a258f4f</string>
 				<string>wx57c7b928e9b013ba</string>
@@ -33,10 +35,9 @@
 				<string>tencent1103194207.content</string>
 				<string>tencent1105488636</string>
 				<string>tencent1105488636.content</string>
+				<string>wb568898243</string>
 				<string>alisdkdemo</string>
 				<string>com.mob.demoShareSDK</string>
-				<string>QQ05FB8B52</string>
-				<string>wb568898243</string>
 			</array>
 		</dict>
 	</array>

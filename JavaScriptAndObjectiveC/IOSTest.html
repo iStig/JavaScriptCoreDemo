@@ -33,6 +33,11 @@
 
 <body>
   <h1>JS Call</h1>
+  
+      <input type="button" value="setupkeyvalue" onclick="setuplocalstoragekeyValue({'key':'a'},{'value':'b'})">
+      <input type="button" value="fetchvaluewithkey" onclick="fetchLocalStorageWithKey({'key':'a'})">
+      <input type="button" value="removevaluewithkey" onclick="removeLocalStorageWithKey({'key':'a'})">
+  
    <input type="button" value="pay" onclick="jsCallPayment({'price':'0.02'})">
    <input type="button" value="Wechat Timeline" onclick="shareSDK({'ios':'0'})">
     <input type="button" value="Wechat Session" onclick="shareSDK({'ios':'1'})">
@@ -130,6 +135,17 @@ function showAlertMsg(a,b) {
         window.MobilePhoneCall.showAlertMsg(a,b);
 }
 
+function  setuplocalstoragekeyValue(a,b){
+    window.MobilePhoneCall.setuplocalstoragekeyValue(a,b);
+}
+
+function  fetchLocalStorageWithKey(a){
+    log(window.MobilePhoneCall.fetchLocalStorageWithKey(a));
+}
+
+function   removeLocalStorageWithKey(a) {
+    window.MobilePhoneCall.removeLocalStorageWithKey(a);
+}
 
 //app端callback callWithDict()
 function callWithDict(a) {

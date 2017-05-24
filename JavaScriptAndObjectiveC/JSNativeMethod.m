@@ -5,6 +5,29 @@
 
 @implementation JSNativeMethod
 
+
+- (NSString *)fetchLocalStorageWithKey:(NSDictionary *)keyDic {
+    NSString *key = keyDic[@"key"];
+    NSString *value =  [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    return value;
+}
+
+- (void)setuplocalstoragekey:(NSDictionary *)keyDic value:(NSDictionary *)valueDic {
+    
+    NSString *key = keyDic[@"key"];
+    NSString *value = valueDic[@"value"];
+
+    [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)removeLocalStorageWithKey:(NSDictionary *)keyDic {
+    NSString *key = keyDic[@"key"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
 - (NSString *)imgCallBack:(NSString *)url {
   NSLog(@"touch image %@",url);
   return @"iOS To H5";
